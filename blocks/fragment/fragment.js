@@ -4,13 +4,22 @@
  * https://www.aem.live/developer/block-collection/fragment
  */
 
-import {
-  decorateMain,
-} from '../../scripts/scripts.js';
+import { loadSections } from '../../scripts/aem.js';
+import { decorateMain } from '../../scripts/scripts.js';
 
-import {
-  loadSections,
-} from '../../scripts/aem.js';
+export default async function decorate(block) {
+  const link = block.querySelector('a');
+  const path = link ? link.getAttribute('href') : block.textContent.trim();
+  const fragment = await loadFragment(path);
+  if (fragment) {
+    const fragmentSection = fragment.querySelector(':scope .section');
+    if (fragmentSection) {
+      block.classList.add(...fragmentSection.classList);
+      block.classList.remove('section');
+      block.replaceChildren(...fragmentSection.childNodes);
+    }
+  }
+}
 
 /**
  * Loads a fragment.
@@ -29,7 +38,10 @@ export async function loadFragment(path) {
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {
         main.querySelectorAll(`${tag}[${attr}^="./media_"]`).forEach((elem) => {
-          elem[attr] = new URL(elem.getAttribute(attr), new URL(path, window.location)).href;
+          elem[attr] = new URL(
+            elem.getAttribute(attr),
+            new URL(path, window.location),
+          ).href;
         });
       };
       resetAttributeBase('img', 'src');
@@ -41,18 +53,4 @@ export async function loadFragment(path) {
     }
   }
   return null;
-}
-
-export default async function decorate(block) {
-  const link = block.querySelector('a');
-  const path = link ? link.getAttribute('href') : block.textContent.trim();
-  const fragment = await loadFragment(path);
-  if (fragment) {
-    const fragmentSection = fragment.querySelector(':scope .section');
-    if (fragmentSection) {
-      block.classList.add(...fragmentSection.classList);
-      block.classList.remove('section');
-      block.replaceChildren(...fragmentSection.childNodes);
-    }
-  }
 }
