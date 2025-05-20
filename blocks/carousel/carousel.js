@@ -1,9 +1,10 @@
-import { readBlockConfig } from '../../scripts/aem.js';
-
 const decorateCarousel = async (block) => {
   const carouselItems = [...block.children];
+  while (block.firstChild) {
+    block.removeChild(block.firstChild);
+  }
   carouselItems.forEach((item) => {
-    console.log(readBlockConfig(item));
+    console.log(item);
   });
 };
 

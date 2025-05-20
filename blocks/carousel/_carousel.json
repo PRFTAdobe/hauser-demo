@@ -33,52 +33,6 @@
   ],
   "models": [
     {
-      "id": "carousel",
-      "fields": [
-        {
-          "component": "text",
-          "name": "delay",
-          "value": "",
-          "label": "Delay",
-          "valueType": "number"
-        },
-        {
-          "component": "select",
-          "name": "stopOnInteraction",
-          "value": "no",
-          "label": "Stop On Interaction",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "No",
-              "value": "no"
-            },
-            {
-              "name": "Yes",
-              "value": "yes"
-            }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "stopOnMouseOver",
-          "value": "no",
-          "label": "Stop On Mouse Over",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "No",
-              "value": "no"
-            },
-            {
-              "name": "Yes",
-              "value": "yes"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "carousel-item",
       "fields": [
         {
