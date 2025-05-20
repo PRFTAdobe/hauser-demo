@@ -161,6 +161,85 @@
     ]
   },
   {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "text",
+        "name": "delay",
+        "value": "",
+        "label": "Delay",
+        "valueType": "number"
+      },
+      {
+        "component": "select",
+        "name": "stopOnInteraction",
+        "value": "no",
+        "label": "Stop On Interaction",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No",
+            "value": "no"
+          },
+          {
+            "name": "Yes",
+            "value": "yes"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "stopOnMouseOver",
+        "value": "no",
+        "label": "Stop On Mouse Over",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No",
+            "value": "no"
+          },
+          {
+            "name": "Yes",
+            "value": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "carousel-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {

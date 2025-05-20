@@ -1,0 +1,123 @@
+{
+  "definitions": [
+    {
+      "title": "Carousel",
+      "id": "carousel",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Carousel",
+              "filter": "carousel"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Carousel Item",
+      "id": "carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Carousel Item",
+              "model": "carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "carousel",
+      "fields": [
+        {
+          "component": "text",
+          "name": "delay",
+          "value": "",
+          "label": "Delay",
+          "valueType": "number"
+        },
+        {
+          "component": "select",
+          "name": "stopOnInteraction",
+          "value": "no",
+          "label": "Stop On Interaction",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "No",
+              "value": "no"
+            },
+            {
+              "name": "Yes",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "stopOnMouseOver",
+          "value": "no",
+          "label": "Stop On Mouse Over",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "No",
+              "value": "no"
+            },
+            {
+              "name": "Yes",
+              "value": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carousel-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "value": "",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "carousel",
+      "components": [
+        "carousel-item"
+      ]
+    }
+  ]
+}
