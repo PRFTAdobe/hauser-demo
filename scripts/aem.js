@@ -377,6 +377,7 @@ async function loadScript(src, attrs) {
       const script = document.createElement('script');
       script.src = src;
       if (attrs) {
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
         for (const attr in attrs) {
           script.setAttribute(attr, attrs[attr]);
         }
@@ -396,6 +397,7 @@ async function loadSection(section, loadCallback) {
     section.dataset.sectionStatus = 'loading';
     const blocks = [...section.querySelectorAll('div.block')];
     for (let i = 0; i < blocks.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
       await loadBlock(blocks[i]);
     }
     if (loadCallback) await loadCallback(section);
@@ -407,6 +409,7 @@ async function loadSection(section, loadCallback) {
 async function loadSections(element) {
   const sections = [...element.querySelectorAll('div.section')];
   for (let i = 0; i < sections.length; i += 1) {
+    // eslint-disable-next-line no-await-in-loop
     await loadSection(sections[i]);
     if (i === 0 && sampleRUM.enhance) {
       sampleRUM.enhance();

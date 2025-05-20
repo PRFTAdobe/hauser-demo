@@ -1,20 +1,26 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies,import/no-unresolved,import/extensions */
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 import perfectionist from 'eslint-plugin-perfectionist';
-// eslint-disable-next-line import/extensions
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 
 const compat = new FlatCompat({});
 
+const airbnbRules = compat
+  .extends('airbnb-base')
+  .reduce((compatElement, item) => {
+    if (item.rules && typeof item.rules === 'object') {
+      Object.assign(compatElement, item.rules);
+    }
+    return compatElement;
+  }, {});
+
 export default defineConfig([
   js.configs.recommended,
   importPlugin.flatConfigs.recommended,
-  perfectionist.configs['recommended-alphabetical'],
-  prettierPlugin,
   {
     languageOptions: {
       ecmaVersion: 'latest',
@@ -22,7 +28,7 @@ export default defineConfig([
       sourceType: 'module',
     },
     rules: {
-      ...compat.extends('airbnb-base').rules,
+      ...airbnbRules,
       'arrow-body-style': ['warn', 'as-needed'],
       'import/extensions': ['error', { js: 'always' }],
       'import/prefer-default-export': [0],
@@ -47,6 +53,15 @@ export default defineConfig([
           allowForLoopAfterthoughts: true,
         },
       ],
+      'no-use-before-define': [
+        2,
+        {
+          allowNamedExports: false,
+          classes: false,
+          functions: false,
+          variables: true,
+        },
+      ],
       'prettier/prettier': [2],
       'sort-keys': [
         0,
@@ -60,8 +75,20 @@ export default defineConfig([
         },
       ],
       'sort-keys/sort-keys-fix': [2],
+      'xwalk/invalid-field-name': [2],
+      'xwalk/max-cells': [
+        2,
+        {
+          '*': 4,
+        },
+      ],
+      'xwalk/no-custom-resource-types': [2],
+      'xwalk/no-duplicate-fields': [2],
+      'xwalk/no-orphan-collapsible-fields': [2],
     },
   },
+  perfectionist.configs['recommended-alphabetical'],
+  prettierPlugin,
   ...compat.plugins('sort-keys', 'json', 'xwalk'),
   globalIgnores(['helix-importer-ui', './scripts/dompurify.min.js']),
 ]);
