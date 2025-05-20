@@ -1,8 +1,10 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
 const decorateCarousel = async (block) => {
-  console.log(readBlockConfig(block));
-  block.classList.add(...['booyah']);
+  const carouselItems = [...block.children];
+  carouselItems.forEach((item) => {
+    console.log(readBlockConfig(item));
+  });
 };
 
 export default decorateCarousel;
