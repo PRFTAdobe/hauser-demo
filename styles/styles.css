@@ -210,13 +210,13 @@ button.secondary {
 
 main img {
   block-size: auto;
-  max-inline-size: 100%;
   inline-size: auto;
+  max-inline-size: 100%;
 }
 
 .icon {
-  display: inline-block;
   block-size: 24px;
+  display: inline-block;
   inline-size: 24px;
 }
 
