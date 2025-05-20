@@ -8,14 +8,15 @@
   {
     "id": "section",
     "components": [
-      "text",
-      "image",
       "button",
-      "title",
-      "hero",
       "cards",
+      "carousel",
       "columns",
-      "fragment"
+      "fragment",
+      "hero",
+      "image",
+      "text",
+      "title"
     ]
   },
   {
