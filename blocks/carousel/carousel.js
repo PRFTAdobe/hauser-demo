@@ -20,8 +20,8 @@ const decorateCarousel = async (block) => {
       carouselElements,
       (carouselElement) => extractElements(carouselElement),
     );
-    picture.classList.add('carousel__picture');
-    slide.append(picture);
+    // picture.classList.add('carousel__picture');
+    slide.innerHTML = picture;
     const carouselCaption = document.createElement('div');
     carouselCaption.classList.add('carousel__caption');
     const carouselCaptionContent = document.createElement('div');
