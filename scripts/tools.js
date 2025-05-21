@@ -6,16 +6,7 @@ const toElement = (string = '') => {
 };
 
 const extractElements = (carouselElement) => {
-  const childElements = toElement(carouselElement.innerHTML);
-  if (childElements.length > 1) {
-    const richTextElement = document.createElement('div');
-    richTextElement.classList.add('rich-text');
-    Array.from(childElements).forEach((childElement) => {
-      richTextElement.append(childElement);
-    });
-    return richTextElement;
-  }
-  return childElements;
+  return carouselElement.innerHTML;
 };
 
 export { extractElements };
