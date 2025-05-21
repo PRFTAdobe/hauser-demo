@@ -190,6 +190,90 @@
     ]
   },
   {
+    "id": "hello-world",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Simple Text",
+        "valueType": "string"
+      },
+      {
+        "component": "boolean",
+        "label": "Boolean",
+        "name": "boolean",
+        "valueType": "boolean"
+      },
+      {
+        "component": "checkbox-group",
+        "label": "Checkbox Group",
+        "name": "checkbox",
+        "valueType": "string[]",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      },
+      {
+        "component": "date-time",
+        "label": "Date & Time",
+        "name": "date",
+        "valueType": "date"
+      },
+      {
+        "component": "number",
+        "name": "number",
+        "label": "Number",
+        "valueType": "number",
+        "value": 0
+      },
+      {
+        "component": "radio-group",
+        "label": "Radio Group",
+        "name": "radio",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Rich Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "label": "Select",
+        "name": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
