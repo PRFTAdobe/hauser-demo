@@ -1,6 +1,8 @@
+import { extractElements } from '../../scripts/tools.js';
+
 const decorateCarousel = async (block) => {
   const carouselItems = [...block.children];
-  /* while (block.firstChild) {
+  while (block.firstChild) {
     block.removeChild(block.firstChild);
   }
 
@@ -20,17 +22,17 @@ const decorateCarousel = async (block) => {
     );
     picture.classList.add('carousel__picture');
     slide.append(picture);
-    const carouselCaption = document.createElement('div');
+    /* const carouselCaption = document.createElement('div');
     carouselCaption.classList.add('carousel__caption');
     const carouselCaptionContent = document.createElement('div');
     carouselCaptionContent.append(title);
     carouselCaptionContent.append(description);
     carouselCaptionContent.classList.add('carousel__caption-content');
     carouselCaption.append(carouselCaptionContent);
-    slide.append(carouselCaption);
+    slide.append(carouselCaption); */
     carouselSlideContainer.append(slide);
   });
-  block.append(carouselSlideContainer); */
+  block.append(carouselSlideContainer);
 };
 
 const addNavigationButton = (text, direction) => {
