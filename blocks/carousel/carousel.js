@@ -1,9 +1,4 @@
-const toElement = (string = '') => {
-  const templateElement = document.createElement('template');
-  templateElement.innerHTML = string.trim();
-  const childNodes = [...templateElement.content.childNodes];
-  return childNodes.length > 1 ? childNodes : childNodes[0] || '';
-};
+import { extractElements } from '../../scripts/tools.js';
 
 const decorateCarousel = async (block) => {
   const carouselItems = [...block.children];
@@ -22,18 +17,7 @@ const decorateCarousel = async (block) => {
     const carouselElements = carouselItem.querySelectorAll(':scope > div');
     const [picture, title, description] = Array.from(
       carouselElements,
-      (carouselElement) => {
-        const childElements = toElement(carouselElement.innerHTML);
-        if (childElements.length > 1) {
-          const richTextElement = document.createElement('div');
-          richTextElement.classList.add('rich-text');
-          Array.from(childElements).forEach((childElement) => {
-            richTextElement.append(childElement);
-          });
-          return richTextElement;
-        }
-        return childElements;
-      },
+      (carouselElement) => extractElements(carouselElement),
     );
     picture.classList.add('carousel__picture');
     slide.append(picture);
