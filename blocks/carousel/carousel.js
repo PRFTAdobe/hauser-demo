@@ -17,15 +17,19 @@ const decorateCarousel = async (block) => {
     slide.classList.add('carousel__slide');
 
     const carouselElements = carouselItem.querySelectorAll(':scope > div');
-    const [picture, title, description] = Array.from(
+    let [picture, title, description] = Array.from(
       carouselElements,
       (carouselElement) => extractElements(carouselElement),
     );
     if (picture) {
-      console.log('Here!');
-      picture.classList.add('carousel__picture');
       slide.append(picture);
+    } else {
+      picture = document.createElement('picture');
+      const img = document.createElement('img');
+      img.src = 'https://placehold.co/600x400';
+      picture.append(img);
     }
+    picture.classList.add('carousel__picture');
     const carouselCaption = document.createElement('div');
     carouselCaption.classList.add('carousel__caption');
     const carouselCaptionContent = document.createElement('div');
