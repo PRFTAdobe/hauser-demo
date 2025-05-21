@@ -21,15 +21,18 @@ const decorateCarousel = async (block) => {
       carouselElements,
       (carouselElement) => extractElements(carouselElement),
     );
-    if (picture) {
-      slide.append(picture);
-    } else {
+    if (!picture) {
       picture = document.createElement('picture');
       const img = document.createElement('img');
-      img.src = 'https://placehold.co/600x400';
+      img.src = 'https://placehold.co/1200x684';
       picture.append(img);
     }
+    if (!title) {
+      title = document.createElement('h3');
+      title.textContent = 'Placeholder Title';
+    }
     picture.classList.add('carousel__picture');
+    slide.append(picture);
     const carouselCaption = document.createElement('div');
     carouselCaption.classList.add('carousel__caption');
     const carouselCaptionContent = document.createElement('div');
