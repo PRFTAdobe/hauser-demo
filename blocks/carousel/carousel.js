@@ -5,6 +5,7 @@ const decorateCarousel = async (block) => {
   /* while (block.firstChild) {
     block.removeChild(block.firstChild);
   } */
+  block.innerHTML = '';
   block.append(addNavigationButton('&#8249;', 'previous'));
   block.append(addNavigationButton('&#8250;', 'next'));
 
