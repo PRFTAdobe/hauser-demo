@@ -21,8 +21,6 @@ const decorateCarousel = async (block) => {
     );
     picture.classList.add('carousel__picture');
     slide.append(picture);
-    slide.append(title);
-    slide.append(description);
     const carouselCaption = document.createElement('div');
     carouselCaption.classList.add('carousel__caption');
     const carouselCaptionContent = document.createElement('div');
