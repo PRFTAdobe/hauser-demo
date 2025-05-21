@@ -1,8 +1,6 @@
-import { extractElements } from '../../scripts/tools.js';
-
 const decorateCarousel = async (block) => {
   const carouselItems = [...block.children];
-  while (block.firstChild) {
+  /* while (block.firstChild) {
     block.removeChild(block.firstChild);
   }
   block.append(addNavigationButton('&#8249;', 'previous'));
@@ -34,7 +32,7 @@ const decorateCarousel = async (block) => {
     slide.append(carouselCaption);
     carouselSlideContainer.append(slide);
   });
-  block.append(carouselSlideContainer);
+  block.append(carouselSlideContainer); */
 };
 
 const addNavigationButton = (text, direction) => {
