@@ -1,3 +1,5 @@
+import { extractElements } from '../../scripts/tools.js';
+
 const decorateCarousel = async (block) => {
   const carouselItems = [...block.children];
   while (block.firstChild) {
