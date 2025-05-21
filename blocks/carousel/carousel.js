@@ -22,6 +22,7 @@ const decorateCarousel = async (block) => {
       (carouselElement) => extractElements(carouselElement),
     );
     if (picture) {
+      console.log('Here!');
       picture.classList.add('carousel__picture');
       slide.append(picture);
     }
