@@ -54,11 +54,11 @@ export default defineConfig([
         },
       ],
       'no-use-before-define': [
-        2,
+        0,
         {
           allowNamedExports: false,
-          classes: false,
-          functions: false,
+          classes: true,
+          functions: true,
           variables: true,
         },
       ],

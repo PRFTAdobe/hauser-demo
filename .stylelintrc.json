@@ -4,10 +4,12 @@
     "stylelint-config-recommended"
   ],
   "plugins": [
+    "@stylistic/stylelint-plugin",
     "stylelint-use-logical",
     "stylelint-order"
   ],
   "rules": {
+    "@stylistic/indentation": 2,
     "order/order": [
       "custom-properties",
       "declarations"
