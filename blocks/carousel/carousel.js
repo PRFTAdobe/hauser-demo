@@ -12,6 +12,7 @@ const decorateCarousel = async (block) => {
   const carouselSlideContainer = document.createElement('ul');
   carouselSlideContainer.classList.add('carousel__slides');
   carouselItems.forEach((carouselItem) => {
+    console.log(carouselItem);
     const slide = document.createElement('li');
     slide.classList.add('carousel__slide');
 
@@ -20,19 +21,13 @@ const decorateCarousel = async (block) => {
       carouselElements,
       (carouselElement) => extractElements(carouselElement),
     );
-    const pictureElement = document.createElement('div');
-    pictureElement.innerHTML = picture;
-    pictureElement.classList.add('carousel__picture');
-    slide.append(pictureElement);
+    picture.classList.add('carousel__picture');
+    slide.append(picture);
     const carouselCaption = document.createElement('div');
     carouselCaption.classList.add('carousel__caption');
     const carouselCaptionContent = document.createElement('div');
-    const titleElement = document.createElement('div');
-    titleElement.innerHTML = title;
-    const descriptionElement = document.createElement('div');
-    descriptionElement.innerHTML = description;
-    carouselCaptionContent.append(titleElement);
-    carouselCaptionContent.append(descriptionElement);
+    carouselCaptionContent.append(title);
+    carouselCaptionContent.append(description);
     carouselCaptionContent.classList.add('carousel__caption-content');
     carouselCaption.append(carouselCaptionContent);
     slide.append(carouselCaption);
