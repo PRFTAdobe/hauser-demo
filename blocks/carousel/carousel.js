@@ -1,14 +1,16 @@
+import { extractElements } from '../../scripts/tools.js';
+
 const decorateCarousel = async (block) => {
   const carouselItems = [...block.children];
-  while (block.firstChild) {
+  /* while (block.firstChild) {
     block.removeChild(block.firstChild);
-  }
+  } */
   block.append(addNavigationButton('&#8249;', 'previous'));
   block.append(addNavigationButton('&#8250;', 'next'));
 
   const carouselSlideContainer = document.createElement('ul');
   carouselSlideContainer.classList.add('carousel__slides');
-  /* carouselItems.forEach((carouselItem) => {
+  carouselItems.forEach((carouselItem) => {
     const slide = document.createElement('li');
     slide.classList.add('carousel__slide');
 
@@ -28,7 +30,7 @@ const decorateCarousel = async (block) => {
     carouselCaption.append(carouselCaptionContent);
     slide.append(carouselCaption);
     carouselSlideContainer.append(slide);
-  }); */
+  });
   block.append(carouselSlideContainer);
 };
 
