@@ -194,12 +194,6 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
-      },
-      {
-        "component": "boolean",
-        "label": "Boolean",
-        "name": "boolean",
-        "valueType": "boolean"
       }
     ]
   },
