@@ -102,12 +102,5 @@
       ]
     }
   ],
-  "filters": [
-    {
-      "id": "section",
-      "components": [
-        "hello-world"
-      ]
-    }
-  ]
+  "filters": []
 }
