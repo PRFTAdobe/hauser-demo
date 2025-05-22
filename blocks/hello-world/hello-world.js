@@ -52,6 +52,7 @@ const decorateHelloWorld = (block) => {
     'beforeend',
     `<p><strong>Select: </strong>${select}</p>`,
   );
+  block.insertAdjacentHTML('beforeend', `<p>Hello, Ravi</p>`);
 };
 
 export default decorateHelloWorld;
