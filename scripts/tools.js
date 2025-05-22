@@ -1,21 +1,27 @@
-const toElement = (string = '') => {
-  const templateElement = document.createElement('template');
-  templateElement.innerHTML = string.trim();
-  const childNodes = [...templateElement.content.childNodes];
-  return childNodes.length > 1 ? childNodes : childNodes[0] || '';
-};
+/* eslint-disable no-restricted-globals */
+const extractElements = (block) => {
+  const blockElements = block.querySelectorAll(':scope > div > div');
+  return Array.from(blockElements).map((blockElement) => {
+    const isRichText = blockElement.childNodes.length > 1;
+    const text = blockElement.textContent.trim();
+    if (text === 'true' || text === 'false') {
+      return text === 'true';
+    }
+    if (!isNaN(text)) {
+      return Number(text);
+    }
 
-const extractElements = (carouselElement) => {
-  const childElements = toElement(carouselElement.innerHTML);
-  if (childElements.length > 1) {
-    const richTextElement = document.createElement('div');
-    richTextElement.classList.add('rich-text');
-    Array.from(childElements).forEach((childElement) => {
-      richTextElement.append(childElement);
-    });
-    return richTextElement;
-  }
-  return childElements;
+    if (isRichText) {
+      blockElement.classList.add('rich-text');
+      return blockElement;
+    }
+
+    const textAsDate = text.replace('T00:00:00.000Z', ' 12:00:00 UTC');
+    if (!isNaN(Date.parse(textAsDate))) {
+      return new Date(textAsDate);
+    }
+    return text;
+  });
 };
 
 export { extractElements };
