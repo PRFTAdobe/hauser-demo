@@ -190,7 +190,7 @@
     ]
   },
   {
-    "id": "helloWorld",
+    "id": "helloworld",
     "fields": [
       {
         "component": "text",

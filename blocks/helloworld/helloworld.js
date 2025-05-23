@@ -1,6 +1,7 @@
 import { extractElements } from '../../scripts/tools.js';
 
 const decorateHelloWorld = (block) => {
+  console.log('Hello World!');
   const blockElements = extractElements(block);
   while (block.firstChild) {
     block.removeChild(block.firstChild);
