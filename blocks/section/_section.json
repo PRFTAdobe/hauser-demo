@@ -1,0 +1,20 @@
+{
+  "definitions": [],
+  "models": [],
+  "filters": [
+    {
+      "id": "section",
+      "components": [
+        "button",
+        "cards",
+        "columns",
+        "fragment",
+        "helloworld",
+        "hero",
+        "image",
+        "text",
+        "title"
+      ]
+    }
+  ]
+}

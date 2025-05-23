@@ -143,14 +143,14 @@
           }
         },
         {
-          "title": "Hello, World",
+          "title": "Hello World",
           "id": "helloworld",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Hello, World",
+                  "name": "Hello World",
                   "model": "helloworld"
                 }
               }
