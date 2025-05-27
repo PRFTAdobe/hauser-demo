@@ -298,17 +298,5 @@
         ]
       }
     ]
-  },
-  {
-    "id": "test-block",
-    "fields": [
-      {
-        "component": "text",
-        "name": "keyValueTest",
-        "key-value": true,
-        "label": "Key Value Test",
-        "valueType": "string"
-      }
-    ]
   }
 ]
