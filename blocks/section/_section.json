@@ -12,8 +12,9 @@
         "hero",
         "image",
         "sample",
+        "test-block"
         "text",
-        "title"
+        "title",
       ]
     }
   ]
