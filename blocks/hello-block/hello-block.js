@@ -7,9 +7,6 @@ const decorateHelloBlock = (block) => {
   }
   const [heading, text] = blockElements;
 
-  console.log(heading);
-  console.log(text);
-
   if (heading && text) {
     block.append(heading);
     block.append(text);
