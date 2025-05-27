@@ -1,19 +1,23 @@
+/* stylelint-disable-next-line selector-max-type */
 footer {
   background-color: var(--light-color);
   font-size: var(--body-font-size-xs);
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 footer .footer > div {
   margin: auto;
   max-inline-size: 1200px;
   padding: 40px 24px 24px;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 footer .footer p {
   margin: 0;
 }
 
 @media (width >= 900px) {
+  /* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
   footer .footer > div {
     padding: 40px 32px 24px;
   }

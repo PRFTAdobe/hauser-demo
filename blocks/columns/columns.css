@@ -1,3 +1,4 @@
+/* stylelint-disable selector-max-type, selector-max-compound-selectors */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -31,3 +32,5 @@
     order: unset;
   }
 }
+
+/* stylelint-enable selector-max-type, selector-max-compound-selectors */

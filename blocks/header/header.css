@@ -1,4 +1,4 @@
-/* header and nav layout */
+/* stylelint-disable selector-max-type, selector-max-compound-selectors */
 header .nav-wrapper {
   background-color: var(--background-color);
   inline-size: 100%;
@@ -45,22 +45,25 @@ header nav[aria-expanded='true'] {
   }
 }
 
+
 header nav p {
   line-height: 1;
   margin: 0;
 }
 
+
 header nav a:any-link {
   color: currentcolor;
 }
 
-/* hamburger */
+
 header nav .nav-hamburger {
   align-items: center;
   block-size: 22px;
   display: flex;
   grid-area: hamburger;
 }
+
 
 header nav .nav-hamburger button {
   background-color: var(--background-color);
@@ -75,6 +78,7 @@ header nav .nav-hamburger button {
   white-space: initial;
 }
 
+
 header nav .nav-hamburger-icon,
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
@@ -84,12 +88,14 @@ header nav .nav-hamburger-icon::after {
   position: relative;
 }
 
+
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   background: currentcolor;
   content: '';
   position: absolute;
 }
+
 
 header nav[aria-expanded='false'] .nav-hamburger-icon,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before,
@@ -99,17 +105,21 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   border-radius: 2px;
 }
 
+
 header nav[aria-expanded='false'] .nav-hamburger-icon::before {
   inset-block-start: -6px;
 }
+
 
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   inset-block-start: 6px;
 }
 
+
 header nav[aria-expanded='true'] .nav-hamburger-icon {
   block-size: 22px;
 }
+
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::before,
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
@@ -121,6 +131,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(45deg);
   transform-origin: 2px 1px;
 }
+
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   inset-block: auto 3px;
@@ -134,7 +145,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   }
 }
 
-/* brand */
+
 header .nav-brand {
   flex-basis: 128px;
   font-size: var(--heading-font-size-s);
@@ -143,12 +154,13 @@ header .nav-brand {
   line-height: 1;
 }
 
+
 header nav .nav-brand img {
   block-size: auto;
   inline-size: 128px;
 }
 
-/* sections */
+
 header nav .nav-sections {
   display: none;
   flex: 1 1 auto;
@@ -156,11 +168,13 @@ header nav .nav-sections {
   visibility: hidden;
 }
 
+
 header nav[aria-expanded='true'] .nav-sections {
   align-self: start;
   display: block;
   visibility: visible;
 }
+
 
 header nav .nav-sections ul {
   font-size: var(--body-font-size-s);
@@ -168,13 +182,16 @@ header nav .nav-sections ul {
   padding-inline-start: 0;
 }
 
+
 header nav .nav-sections ul > li {
   font-weight: 500;
 }
 
+
 header nav .nav-sections ul > li > ul {
   margin-block-start: 0;
 }
+
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
@@ -186,6 +203,7 @@ header nav .nav-sections ul > li > ul > li {
     visibility: visible;
     white-space: nowrap;
   }
+
 
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
@@ -211,10 +229,12 @@ header nav .nav-sections ul > li > ul > li {
     transform: rotate(135deg);
   }
 
+
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
     inset-block: auto 0.5em;
     transform: rotate(315deg);
   }
+
 
   header nav .nav-sections ul {
     display: flex;
@@ -222,15 +242,18 @@ header nav .nav-sections ul > li > ul > li {
     margin: 0;
   }
 
+
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
   }
 
+
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
   }
+
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     background-color: var(--light-color);
@@ -242,6 +265,7 @@ header nav .nav-sections ul > li > ul > li {
     position: absolute;
     white-space: initial;
   }
+
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     block-size: 0;
@@ -255,12 +279,15 @@ header nav .nav-sections ul > li > ul > li {
     position: absolute;
   }
 
+
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
 }
 
-/* tools */
+
 header nav .nav-tools {
   grid-area: tools;
 }
+
+/* stylelint-enable selector-max-type, selector-max-compound-selectors */

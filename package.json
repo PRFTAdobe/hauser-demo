@@ -27,6 +27,7 @@
   "homepage": "https://github.com/adobe/aem-boilerplate#readme",
   "devDependencies": {
     "@babel/eslint-parser": "7.27.1",
+    "@namics/stylelint-bem": "^10.1.0",
     "@pro-vision/pv-create-component": "^0.2.1",
     "@stylistic/stylelint-plugin": "^3.1.2",
     "chalk": "4.1.0",

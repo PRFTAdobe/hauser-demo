@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .hero-container .hero-wrapper {
   max-inline-size: unset;
   padding: 0;
@@ -9,12 +10,14 @@
   position: relative;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .hero h1 {
   color: var(--background-color);
   margin-inline: auto;
   max-inline-size: 1200px;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .hero picture {
   box-sizing: border-box;
   inset: 0;
@@ -23,6 +26,7 @@
   z-index: -1;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .hero img {
   block-size: 100%;
   inline-size: 100%;

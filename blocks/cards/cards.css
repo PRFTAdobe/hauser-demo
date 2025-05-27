@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .cards > ul {
   display: grid;
   grid-gap: 24px;
@@ -7,19 +8,23 @@
   padding: 0;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .cards > ul > li {
   background-color: var(--background-color);
   border: 1px solid #dadada;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors */
 .cards .cards-card-body {
   margin: 16px;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors */
 .cards .cards-card-image {
   line-height: 0;
 }
 
+/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
 .cards > ul > li img {
   aspect-ratio: 4 / 3;
   inline-size: 100%;

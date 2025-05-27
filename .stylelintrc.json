@@ -4,19 +4,48 @@
     "stylelint-config-recommended"
   ],
   "plugins": [
+    "@namics/stylelint-bem",
     "@stylistic/stylelint-plugin",
-    "stylelint-use-logical",
-    "stylelint-order"
+    "stylelint-order",
+    "stylelint-use-logical"
   ],
   "rules": {
     "@stylistic/indentation": 2,
+    "csstools/use-logical": "always",
+    "media-feature-range-notation": null,
     "order/order": [
       "custom-properties",
       "declarations"
     ],
     "order/properties-alphabetical-order": true,
-    "csstools/use-logical": "always",
-    "media-feature-range-notation": null,
-    "selector-class-pattern": null
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": []
+    },
+    "selector-class-pattern": null,
+    "max-nesting-depth": [
+      1,
+      {
+        "ignore": [
+          "pseudo-classes"
+        ]
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": [
+          ""
+        ]
+      }
+    ],
+    "selector-max-type": [
+      0,
+      {
+        "severity": "error"
+      }
+    ],
+    "selector-max-compound-selectors": 1
   }
 }
+
