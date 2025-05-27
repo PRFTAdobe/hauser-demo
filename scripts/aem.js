@@ -463,10 +463,11 @@ function readBlockConfig(block) {
 
 /* eslint-env browser */
 function sampleRUM(checkpoint, data) {
-  const timeShift = () =>
-    window.performance
+  const timeShift = () => {
+    return window.performance
       ? window.performance.now()
       : Date.now() - window.hlx.rum.firstReadTime;
+  };
   try {
     window.hlx = window.hlx || {};
     if (!window.hlx.rum) {
@@ -694,12 +695,13 @@ function wrapTextNodes(block) {
     [...el.attributes]
       // move the instrumentation from the cell to the new paragraph, also keep the class
       // in case the content is a buttton and the cell the button-container
-      .filter(
-        ({ nodeName }) =>
+      .filter(({ nodeName }) => {
+        return (
           nodeName === 'class' ||
           nodeName.startsWith('data-aue') ||
-          nodeName.startsWith('data-richtext'),
-      )
+          nodeName.startsWith('data-richtext')
+        );
+      })
       .forEach(({ nodeName, nodeValue }) => {
         wrapper.setAttribute(nodeName, nodeValue);
         el.removeAttribute(nodeName);

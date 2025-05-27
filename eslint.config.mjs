@@ -29,7 +29,9 @@ export default defineConfig([
     },
     rules: {
       ...airbnbRules,
-      'arrow-body-style': ['warn', 'as-needed'],
+      'arrow-body-style': [0, 'as-needed'],
+      'arrow-return-style/arrow-return-style': [2],
+      'arrow-return-style/no-export-default-arrow': [2],
       'import/extensions': ['error', { js: 'always' }],
       'import/prefer-default-export': [0],
       'json/*': 'error',
@@ -79,7 +81,7 @@ export default defineConfig([
       'xwalk/max-cells': [
         2,
         {
-          '*': 4,
+          '*': 10,
         },
       ],
       'xwalk/no-custom-resource-types': [2],
@@ -89,6 +91,6 @@ export default defineConfig([
   },
   perfectionist.configs['recommended-alphabetical'],
   prettierPlugin,
-  ...compat.plugins('sort-keys', 'json', 'xwalk'),
+  ...compat.plugins('sort-keys', 'json', 'xwalk', 'arrow-return-style'),
   globalIgnores(['helix-importer-ui', './scripts/dompurify.min.js']),
 ]);
