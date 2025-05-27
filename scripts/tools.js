@@ -4,8 +4,9 @@ const extractElements = (block) => {
   return Array.from(blockElements).map((blockElement) => {
     const isRichText =
       blockElement.childNodes.length > 1 ||
-      blockElement.querySelector(':scope > p').innerHTML !==
-        blockElement.querySelector(':scope > p').innerText;
+      (blockElement.querySelector(':scope > p') &&
+        blockElement.querySelector(':scope > p').innerHTML !==
+          blockElement.querySelector(':scope > p').innerText);
     const text = blockElement.textContent.trim();
     if (text === 'true' || text === 'false') {
       return text === 'true';
