@@ -6,7 +6,7 @@ const extractElements = (block) => {
       blockElement.childNodes.length > 1 ||
       (blockElement.querySelector(':scope > p') &&
         blockElement.querySelector(':scope > p').innerHTML !==
-          blockElement.querySelector(':scope > p').innerText);
+          blockElement.querySelector(':scope > p').textContent);
     const text = blockElement.textContent.trim();
     if (text === 'true' || text === 'false') {
       return text === 'true';

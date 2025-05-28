@@ -15,6 +15,7 @@ const decorateSample = (block) => {
     richText,
     select,
   ] = blockElements;
+
   if (simpleText) {
     block.insertAdjacentHTML(
       'beforeend',
