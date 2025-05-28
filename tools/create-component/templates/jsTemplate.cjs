@@ -9,7 +9,7 @@ const decorate${pascalCase} = (block) => {
   const [heading, text] = blockElements;
 
   if (heading || text) {
-    block.append(heading || '');
+    block.append(heading.firstElementChild || '');
     block.append(text || '');
   } else {
     block.insertAdjacentHTML('beforeend', '<p>${uppercase} Component</p>');

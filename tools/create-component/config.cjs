@@ -2,6 +2,7 @@
 const pvCreateComponentConfig = require('@pro-vision/pv-create-component/config.js');
 
 const cssTemplate = require('./templates/cssTemplate.cjs');
+const jestTemplate = require('./templates/jestTemplate.cjs');
 const jsTemplate = require('./templates/jsTemplate.cjs');
 const xWalkTemplate = require('./templates/xWalkTemplate.cjs');
 
@@ -86,6 +87,18 @@ config.push({
     },
   ],
   id: 'XWALK',
+});
+config.push({
+  files: [
+    {
+      id: 'JEST-FILE',
+      path: (options) => {
+        return `${BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.spec.js`;
+      },
+      template: jestTemplate,
+    },
+  ],
+  id: 'JEST',
 });
 
 module.exports = config;
