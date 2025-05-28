@@ -1,7 +1,7 @@
 import { extractElements } from '../../scripts/tools.js';
 
 const decorateSample = (block) => {
-  const blockElements = extractElements(block);
+  const blockElements = extractElements(block, [6]);
   while (block.firstChild) {
     block.removeChild(block.firstChild);
   }
@@ -65,17 +65,10 @@ const decorateSample = (block) => {
   }
 
   if (richText) {
-    if (typeof richText.outerHTML !== 'undefined') {
-      block.insertAdjacentHTML(
-        'beforeend',
-        `<div><p><strong>Rich Text: </strong></p>${richText.outerHTML}</div>`,
-      );
-    } else {
-      block.insertAdjacentHTML(
-        'beforeend',
-        `<p><strong>Rich Text: </strong>${richText}</p>`,
-      );
-    }
+    block.insertAdjacentHTML(
+      'beforeend',
+      `<div><p><strong>Rich Text: </strong></p>${richText.outerHTML}</div>`,
+    );
   }
 
   if (select) {

@@ -1,12 +1,8 @@
 /* eslint-disable no-restricted-globals */
-const extractElements = (block) => {
+const extractElements = (block, richTextItems = []) => {
   const blockElements = block.querySelectorAll(':scope > div > div');
-  return Array.from(blockElements).map((blockElement) => {
-    const isRichText =
-      blockElement.childNodes.length > 1 ||
-      (blockElement.querySelector(':scope > p') &&
-        blockElement.querySelector(':scope > p').innerHTML !==
-          blockElement.querySelector(':scope > p').textContent);
+  return Array.from(blockElements).map((blockElement, index) => {
+    const isRichText = richTextItems.includes(index);
     const text = blockElement.textContent.trim();
     if (text === 'true' || text === 'false') {
       return text === 'true';

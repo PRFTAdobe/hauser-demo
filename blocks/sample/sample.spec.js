@@ -131,45 +131,4 @@ describe('Sample', () => {
       '<strong>Select: </strong>option1',
     );
   });
-
-  test('it outputs the appropriate rich text when content is single line', () => {
-    const blockAsString = `<div
-      class="sample block"
-      data-block-name="sample"
-      data-block-status="loaded"
-    >
-      <div>
-        <div><p>Booyah!</p></div>
-      </div>
-      <div>
-        <div><p>true</p></div>
-      </div>
-      <div>
-        <div><p>option1</p></div>
-      </div>
-      <div>
-        <div><p>2025-05-24T00:00:00.000Z</p></div>
-      </div>
-      <div>
-        <div><p>3</p></div>
-      </div>
-      <div>
-        <div><p>option2</p></div>
-      </div>
-      <div>
-        <div><p>The Brady bunch, the Brady bunch</p></div>
-      </div>
-      <div>
-        <div><p>option1</p></div>
-      </div>
-    </div>`;
-    const parser = new DOMParser();
-    const document = parser.parseFromString(blockAsString, 'text/html');
-    block = document.body.firstChild;
-    decorateSample(block);
-    const firstParagraph = block.querySelector(':scope > p:nth-child(7)');
-    expect(firstParagraph.innerHTML).toEqual(
-      `<strong>Rich Text: </strong>The Brady bunch, the Brady bunch`,
-    );
-  });
 });

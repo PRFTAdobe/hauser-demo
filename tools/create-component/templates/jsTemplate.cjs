@@ -2,7 +2,7 @@ const javaScriptTemplate = ({ pascalCase, uppercase }) => {
   return `import { extractElements } from '../../scripts/tools.js';
 
 const decorate${pascalCase} = (block) => {
-  const blockElements = extractElements(block);
+  const blockElements = extractElements(block, [0, 1]);
   while (block.firstChild) {
     block.removeChild(block.firstChild);
   }
