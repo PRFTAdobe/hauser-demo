@@ -45,6 +45,7 @@
       "components": [
         "button",
         "cards",
+        "carousel",
         "columns",
         "fragment",
         "hero",
