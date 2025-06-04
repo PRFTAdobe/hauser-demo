@@ -24,4 +24,6 @@ const extractElements = (block, richTextItems = []) => {
   });
 };
 
-export { extractElements };
+const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
+
+export { extractElements, html };

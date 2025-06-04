@@ -1,4 +1,4 @@
-import { extractElements } from '../../scripts/tools.js';
+import { extractElements, html } from '../../scripts/tools.js';
 
 const decorateSample = (block) => {
   const blockElements = extractElements(block, [6]);
@@ -19,18 +19,18 @@ const decorateSample = (block) => {
   if (simpleText) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>Simple Text: </strong>${simpleText}</p>`,
+      html`<p><strong>Simple Text: </strong>${simpleText}</p>`,
     );
   }
   block.insertAdjacentHTML(
     'beforeend',
-    `<p><strong>Boolean: </strong>${boolean === true}</p>`,
+    html`<p><strong>Boolean: </strong>${boolean === true}</p>`,
   );
 
   if (checkboxGroup) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>Checkbox Group: </strong>${checkboxGroup}</p>`,
+      html`<p><strong>Checkbox Group: </strong>${checkboxGroup}</p>`,
     );
   }
 
@@ -38,43 +38,45 @@ const decorateSample = (block) => {
   if (dateAndTime && !isNaN(Date.parse(dateAndTime))) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>Date and Time: </strong>${dateAndTime.toLocaleDateString(
-        'en',
-        {
+      html`<p>
+        <strong>Date and Time: </strong>${dateAndTime.toLocaleDateString('en', {
           day: 'numeric',
           month: 'short',
           timeZone: 'UTC',
           year: 'numeric',
-        },
-      )}</p>`,
+        })}
+      </p>`,
     );
   }
 
   if (number) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>Number: </strong>${number}</p>`,
+      html`<p><strong>Number: </strong>${number}</p>`,
     );
   }
 
   if (radioGroup) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>Radio Group: </strong>${radioGroup}</p>`,
+      html`<p><strong>Radio Group: </strong>${radioGroup}</p>`,
     );
   }
 
   if (richText) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<div><p><strong>Rich Text: </strong></p>${richText.outerHTML}</div>`,
+      html` <div>
+        <p><strong>Rich Text: </strong></p>
+        ${richText.outerHTML}
+      </div>`,
     );
   }
 
   if (select) {
     block.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>Select: </strong>${select}</p>`,
+      html`<p><strong>Select: </strong>${select}</p>`,
     );
   }
 };

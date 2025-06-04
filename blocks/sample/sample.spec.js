@@ -64,38 +64,42 @@ beforeAll(() => {
 describe('Sample', () => {
   test('it outputs the appropriate simple text', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(1)');
-    expect(firstParagraph.innerHTML).toEqual(
+    expect(firstParagraph.innerHTML.trim()).toEqual(
       '<strong>Simple Text: </strong>Booyah!',
     );
   });
 
   test('it outputs the appropriate boolean', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(2)');
-    expect(firstParagraph.innerHTML).toEqual('<strong>Boolean: </strong>true');
+    expect(firstParagraph.innerHTML.trim()).toEqual(
+      '<strong>Boolean: </strong>true',
+    );
   });
 
   test('it outputs the appropriate checkbox group', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(3)');
-    expect(firstParagraph.innerHTML).toEqual(
+    expect(firstParagraph.innerHTML.trim()).toEqual(
       '<strong>Checkbox Group: </strong>option1',
     );
   });
 
   test('it outputs the appropriate date and time', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(4)');
-    expect(firstParagraph.innerHTML).toEqual(
+    expect(firstParagraph.innerHTML.trim()).toEqual(
       '<strong>Date and Time: </strong>May 24, 2025',
     );
   });
 
   test('it outputs the appropriate numeric value', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(5)');
-    expect(firstParagraph.innerHTML).toEqual('<strong>Number: </strong>3');
+    expect(firstParagraph.innerHTML.trim()).toEqual(
+      '<strong>Number: </strong>3',
+    );
   });
 
   test('it outputs the appropriate radio group', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(6)');
-    expect(firstParagraph.innerHTML).toEqual(
+    expect(firstParagraph.innerHTML.trim()).toEqual(
       '<strong>Radio Group: </strong>option2',
     );
   });
@@ -127,7 +131,7 @@ describe('Sample', () => {
 
   test('it outputs the appropriate select', () => {
     const firstParagraph = block.querySelector(':scope > p:nth-child(8)');
-    expect(firstParagraph.innerHTML).toEqual(
+    expect(firstParagraph.innerHTML.trim()).toEqual(
       '<strong>Select: </strong>option1',
     );
   });
