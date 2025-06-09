@@ -315,6 +315,13 @@
             "value": "option2"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "multi",
+        "label": "Multi Simple Text",
+        "valueType": "string",
+        "multi": true
       }
     ]
   }
