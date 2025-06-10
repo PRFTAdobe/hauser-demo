@@ -12,7 +12,7 @@
   order: 1;
 }
 
-.columns > div > .columns-img-col {
+.columns > div > .columns__image-column {
   order: 0;
 }
 

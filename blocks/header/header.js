@@ -79,6 +79,11 @@ const decorateHeader = async (block) => {
   block.append(navWrapper);
 };
 
+/**
+ * Updates the brand section
+ * @param block
+ * @returns updated brand section
+ */
 const updateBrandSection = (block) => {
   const brandButton = block.querySelector('.button');
   if (brandButton) {
@@ -89,6 +94,11 @@ const updateBrandSection = (block) => {
   return block;
 };
 
+/**
+ * Updates the link section
+ * @param block
+ * @returns updated link section
+ */
 const updateLinksSection = (block) => {
   if (block) {
     block.classList.add('nav__links');
@@ -113,6 +123,11 @@ const updateLinksSection = (block) => {
   return block;
 };
 
+/**
+ * Updates the tools section
+ * @param block
+ * @returns updated tools section
+ */
 const updateToolsSection = (block) => {
   const icon = block.querySelector('.icon');
   if (icon) {
@@ -124,6 +139,10 @@ const updateToolsSection = (block) => {
   return block;
 };
 
+/**
+ * Creates the Hamburger/Mobile menu
+ * @returns {HTMLDivElement}
+ */
 const createMobileMenu = () => {
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav__hamburger');
@@ -138,6 +157,10 @@ const createMobileMenu = () => {
   return hamburger;
 };
 
+/**
+ * Closes Nav on Escape Keyboard Event
+ * @param event
+ */
 const closeOnEscape = (event) => {
   if (event.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -155,6 +178,10 @@ const closeOnEscape = (event) => {
   }
 };
 
+/**
+ * Closes Nav on FocusLost
+ * @param event
+ */
 const closeOnFocusLost = (event) => {
   const nav = event.currentTarget;
   if (!nav.contains(event.relatedTarget)) {
@@ -170,10 +197,17 @@ const closeOnFocusLost = (event) => {
   }
 };
 
+/**
+ * Adds Open on Keydown event listener to the active element
+ */
 const focusNavSection = () => {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 };
 
+/**
+ * Opens Submenu on 'Enter' or 'Space' key
+ * @param event
+ */
 const openOnKeydown = (event) => {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav__link--with-children';

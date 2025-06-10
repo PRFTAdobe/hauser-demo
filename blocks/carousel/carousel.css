@@ -40,7 +40,7 @@
   align-items: flex-end;
 }
 
-/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
+/* stylelint-disable-next-line selector-max-type */
 .carousel__slide-image picture {
   inset: 0;
   position: absolute;
