@@ -14,6 +14,7 @@ const decorateSample = (block) => {
     radioGroup,
     richText,
     select,
+    multi,
   ] = blockElements;
 
   if (simpleText) {
@@ -77,6 +78,13 @@ const decorateSample = (block) => {
     block.insertAdjacentHTML(
       'beforeend',
       html`<p><strong>Select: </strong>${select}</p>`,
+    );
+  }
+
+  if (multi) {
+    block.insertAdjacentHTML(
+      'beforeend',
+      html`<p><strong>Multifield: </strong>${multi}</p>`,
     );
   }
 };

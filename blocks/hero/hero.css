@@ -1,24 +1,22 @@
 /* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
-.hero-container .hero-wrapper {
+main > .section > .hero-wrapper {
   max-inline-size: unset;
   padding: 0;
 }
 
 .hero {
-  min-block-size: 300px;
+  min-block-size: calc(300px + (40px * 2));
   padding: 40px 24px;
   position: relative;
 }
 
-/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
-.hero h1 {
+.hero__heading {
   color: var(--background-color);
   margin-inline: auto;
   max-inline-size: 1200px;
 }
 
-/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
-.hero picture {
+.hero__media {
   box-sizing: border-box;
   inset: 0;
   object-fit: cover;
@@ -26,8 +24,7 @@
   z-index: -1;
 }
 
-/* stylelint-disable-next-line selector-max-compound-selectors, selector-max-type */
-.hero img {
+.hero__image {
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;

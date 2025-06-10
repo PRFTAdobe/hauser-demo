@@ -7,7 +7,7 @@ const extractElements = (block, richTextItems = []) => {
     if (text === 'true' || text === 'false') {
       return text === 'true';
     }
-    if (!isNaN(text)) {
+    if (text && !isNaN(text)) {
       return Number(text);
     }
 

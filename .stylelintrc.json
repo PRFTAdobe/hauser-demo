@@ -42,10 +42,20 @@
     "selector-max-type": [
       0,
       {
-        "severity": "error"
+        "severity": "error",
+        "ignore": [
+          "child"
+        ],
+        "ignoreTypes": [
+          "a",
+          "body",
+          "button",
+          "footer",
+          "header"
+        ]
       }
     ],
-    "selector-max-compound-selectors": 1
+    "selector-max-compound-selectors": 2
   }
 }
 

@@ -1,48 +1,41 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
-/* stylelint-disable selector-max-type, selector-max-compound-selectors */
+@import url('preflight.css');
 
 :root {
-  /* colors */
   --background-color: white;
-  --dark-color: #505050;
-  --light-color: #f8f8f8;
-  --link-color: #3b63fb;
-  --text-color: #131313;
   --body-font-family: roboto, roboto-fallback, sans-serif;
-
-  /* fonts */
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
-  --heading-font-size-l: 34px;
-
-  /* body sizes */
   --body-font-size-m: 22px;
-  --heading-font-size-m: 27px;
   --body-font-size-s: 19px;
-
-  /* heading sizes */
+  --body-font-size-xs: 17px;
+  --dark-color: #505050;
+  --heading-font-family:
+    roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --heading-font-size-l: 34px;
+  --heading-font-size-m: 27px;
   --heading-font-size-s: 24px;
   --heading-font-size-xl: 44px;
-  --body-font-size-xs: 17px;
   --heading-font-size-xs: 22px;
   --heading-font-size-xxl: 55px;
-  --nav-height: 64px;
-
-  /* nav height */
+  --light-color: #f8f8f8;
+  --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --nav-height: 64px;
+  --text-color: #131313;
 }
 
-/* fallback fonts */
+@media (width >= 900px) {
+  :root {
+    --body-font-size-m: 18px;
+    --body-font-size-s: 16px;
+    --body-font-size-xs: 14px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 22px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-xs: 18px;
+    --heading-font-size-xxl: 45px;
+  }
+}
+
 @font-face {
   font-family: roboto-condensed-fallback;
   size-adjust: 88.82%;
@@ -55,28 +48,11 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --heading-font-size-l: 28px;
-    --body-font-size-m: 18px;
-    --heading-font-size-m: 22px;
-
-    /* heading sizes */
-    --body-font-size-s: 16px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xl: 36px;
-    --body-font-size-xs: 14px;
-    --heading-font-size-xs: 18px;
-    --heading-font-size-xxl: 45px;
-  }
-}
-
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   display: none;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family), sans-serif;
   font-size: var(--body-font-size-m);
   line-height: 1.6;
   margin: 0;
@@ -90,23 +66,24 @@ header {
   block-size: var(--nav-height);
 }
 
-header .header,
-footer .footer {
+.header,
+.footer {
   visibility: hidden;
 }
 
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
+.header[data-block-status='loaded'],
+.footer[data-block-status='loaded'] {
   visibility: visible;
 }
 
+/* stylelint-disable selector-max-type */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font-family);
+  font-family: var(--heading-font-family), sans-serif;
   font-weight: 600;
   line-height: 1.25;
   margin-block: 0.8em 0.25em;
@@ -159,10 +136,6 @@ pre {
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
-}
-
 input,
 textarea,
 select,
@@ -170,20 +143,60 @@ button {
   font: inherit;
 }
 
-/* links */
+/* stylelint-enable selector-max-type */
+
+/* stylelint-disable selector-max-type, selector-max-compound-selectors */
+main > div {
+  margin: 40px 16px;
+}
+
+main > .section {
+  margin: 40px 0;
+}
+
+main > .section > [class*='-wrapper'] {
+  margin: auto;
+  max-inline-size: calc(1200px + (24px * 2));
+  padding: 0 24px;
+}
+
+main > .section:first-of-type {
+  margin-block-start: 0;
+}
+
+@media (width >= 900px) {
+  main > .section > [class*='-wrapper'] {
+    max-inline-size: calc(1200px + (32px * 2));
+    padding: 0 32px;
+  }
+}
+
+main .section.light,
+main .section.highlight {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main img {
+  block-size: auto;
+  inline-size: auto;
+  max-inline-size: 100%;
+}
+/* stylelint-enable selector-max-type, selector-max-compound-selectors */
+
 a:any-link {
   color: var(--link-color);
   overflow-wrap: break-word;
   text-decoration: none;
 }
 
-a:hover {
+a:any-link:hover {
   color: var(--link-hover-color);
   text-decoration: underline;
 }
 
-/* buttons */
-a.button:any-link,
+.button:any-link,
 button {
   background-color: var(--link-color);
   border: 2px solid transparent;
@@ -192,12 +205,12 @@ button {
   color: var(--background-color);
   cursor: pointer;
   display: inline-block;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family), sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   margin: 12px 0;
-  max-inline-size: 100%;
+  max-inline-size: calc(100% + (1.2em * 2));
   overflow: hidden;
   padding: 0.5em 1.2em;
   text-align: center;
@@ -206,8 +219,8 @@ button {
   white-space: nowrap;
 }
 
-a.button:hover,
-a.button:focus,
+.button:hover,
+.button:focus,
 button:hover,
 button:focus {
   background-color: var(--link-hover-color);
@@ -220,17 +233,11 @@ button:disabled:hover {
   cursor: unset;
 }
 
-a.button.secondary,
+.button.secondary,
 button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
-}
-
-main img {
-  block-size: auto;
-  inline-size: auto;
-  max-inline-size: 100%;
 }
 
 .icon {
@@ -239,38 +246,8 @@ main img {
   inline-size: 24px;
 }
 
+/* stylelint-disable-next-line selector-max-type, selector-max-compound-selectors */
 .icon img {
   block-size: 100%;
   inline-size: 100%;
 }
-
-/* sections */
-main > .section {
-  margin: 40px 0;
-}
-
-main > .section > div {
-  margin: auto;
-  max-inline-size: 1200px;
-  padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-block-start: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-  }
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
-}
-
-/* stylelint-enable selector-max-type, selector-max-compound-selectors */
