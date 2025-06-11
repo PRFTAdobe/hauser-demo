@@ -40,13 +40,13 @@ describe('decorateSample', () => {
     const mockData = [
       'Hello World', // simpleText
       true, // boolean
-      'Option 1, Option 3', // checkboxGroup
+      'Option 1', // checkboxGroup
       new Date('2024-01-15T00:00:00.000Z'), // dateAndTime
       12345, // number
       'Yes', // radioGroup
       mockRichText, // richText
       'Choice A', // select
-      'Multi 1; Multi 2', // multi
+      ['Multi 1', 'Multi 2'],
     ];
     extractElements.mockReturnValue(mockData);
 
@@ -61,7 +61,7 @@ describe('decorateSample', () => {
     );
     expect(beautifulHtml).toContain('<p><strong>Boolean: </strong>true</p>');
     expect(beautifulHtml).toContain(
-      '<p><strong>Checkbox Group: </strong>Option 1, Option 3</p>',
+      '<p><strong>Checkbox Group: </strong>Option 1</p>',
     );
 
     // Note: The date is formatted according to the function's logic
@@ -78,9 +78,11 @@ describe('decorateSample', () => {
     );
     expect(beautifulHtml).toContain(expectedRichText);
     expect(beautifulHtml).toContain('<p><strong>Select: </strong>Choice A</p>');
-    expect(beautifulHtml).toContain(
-      '<p><strong>Multifield: </strong>Multi 1; Multi 2</p>',
+    const beautifulMultiText = beautify.html(
+      html`<p><strong>Multifield Item: </strong>Multi 1</p>
+        <p><strong>Multifield Item: </strong>Multi 2</p>`,
     );
+    expect(beautifulHtml).toContain(beautifulMultiText);
 
     // Also assert that the initial content is gone
     expect(beautifulHtml).not.toContain('Initial Content');
