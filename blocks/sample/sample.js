@@ -25,7 +25,7 @@ const decorateSample = (block) => {
   }
   block.insertAdjacentHTML(
     'beforeend',
-    html`<p><strong>Boolean: </strong>${boolean === true}</p>`,
+    html`<p><strong>Boolean: </strong>${boolean.toString()}</p>`,
   );
 
   if (checkboxGroup) {
