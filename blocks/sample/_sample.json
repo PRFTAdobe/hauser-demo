@@ -105,6 +105,13 @@
           "label": "Multi Simple Text",
           "valueType": "string",
           "multi": true
+        },
+        {
+          "component": "richtext",
+          "name": "multiRich",
+          "label": "Multi Rich Text",
+          "valueType": "string",
+          "multi": true
         }
       ]
     }
