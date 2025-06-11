@@ -64,11 +64,10 @@ describe('decorateSample', () => {
       '<p><strong>Checkbox Group: </strong>Option 1, Option 3</p>',
     );
 
-    const expectedDateAndTime = beautify.html(
-      html`<strong>Date and Time: </strong>Jan 15, 2024`,
-    );
     // Note: The date is formatted according to the function's logic
-    expect(beautifulHtml).toContain(expectedDateAndTime);
+    expect(beautifulHtml).toContain(
+      '<p><strong>Date and Time: </strong>Jan 15, 2024</p>',
+    );
     expect(beautifulHtml).toContain('<p><strong>Number: </strong>12345</p>');
     expect(beautifulHtml).toContain('<p><strong>Radio Group: </strong>Yes</p>');
     const expectedRichText = beautify.html(

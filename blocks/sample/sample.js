@@ -37,16 +37,15 @@ const decorateSample = (block) => {
 
   // eslint-disable-next-line no-restricted-globals
   if (dateAndTime && !isNaN(Date.parse(dateAndTime))) {
+    const dateAndTimeAsString = dateAndTime.toLocaleDateString('en', {
+      day: 'numeric',
+      month: 'short',
+      timeZone: 'UTC',
+      year: 'numeric',
+    });
     block.insertAdjacentHTML(
       'beforeend',
-      html`<p>
-        <strong>Date and Time: </strong>${dateAndTime.toLocaleDateString('en', {
-          day: 'numeric',
-          month: 'short',
-          timeZone: 'UTC',
-          year: 'numeric',
-        })}
-      </p>`,
+      html`<p><strong>Date and Time: </strong>${dateAndTimeAsString}</p>`,
     );
   }
 
