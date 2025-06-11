@@ -322,13 +322,6 @@
         "label": "Multi Simple Text",
         "valueType": "string",
         "multi": true
-      },
-      {
-        "component": "reference",
-        "name": "multiReference",
-        "label": "Multi Reference",
-        "valueType": "string",
-        "multi": true
       }
     ]
   }
