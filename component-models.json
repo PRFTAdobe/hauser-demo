@@ -315,6 +315,13 @@
             "value": "option2"
           }
         ]
+      },
+      {
+        "component": "input",
+        "name": "input",
+        "value": "",
+        "label": "Input Field",
+        "valueType": "string"
       }
     ]
   }
