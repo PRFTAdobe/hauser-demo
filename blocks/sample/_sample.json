@@ -107,9 +107,9 @@
           "multi": true
         },
         {
-          "component": "richtext",
-          "name": "multiRich",
-          "label": "Multi Rich Text",
+          "component": "reference",
+          "name": "multiReference",
+          "label": "Multi Reference",
           "valueType": "string",
           "multi": true
         }
