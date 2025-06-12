@@ -1,6 +1,7 @@
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
+import { html } from '../../scripts/tools.js';
 
-const bindEvents = (block) => {
+export const bindEvents = (block) => {
   const slideIndicators = block.querySelector('.carousel__indicators');
   if (!slideIndicators) return;
 
@@ -67,16 +68,16 @@ const showSlide = (block, slideIndex = 0) => {
   });
 };
 
-const updateActiveSlide = (slide) => {
+export const updateActiveSlide = (slide) => {
   const block = slide.closest('.carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
   block.dataset.activeSlide = slideIndex;
 
   const slides = block.querySelectorAll('.carousel__slide');
 
-  slides.forEach((aSlide, idx) => {
-    aSlide.setAttribute('aria-hidden', idx !== slideIndex);
-    aSlide.querySelectorAll('a').forEach((link) => {
+  slides.forEach((slideItem, idx) => {
+    slideItem.setAttribute('aria-hidden', idx !== slideIndex);
+    slideItem.querySelectorAll('a').forEach((link) => {
       if (idx !== slideIndex) {
         link.setAttribute('tabindex', '-1');
       } else {
@@ -128,9 +129,17 @@ const decorateCarousel = async (block) => {
 
     const slideNavButtons = document.createElement('div');
     slideNavButtons.classList.add('carousel__navigation-buttons');
-    slideNavButtons.innerHTML = `
-      <button type="button" class= "slide-prev carousel__navigation-button" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
-      <button type="button" class="slide-next carousel__navigation-button" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
+    slideNavButtons.innerHTML = html`
+      <button
+        type="button"
+        class="slide-prev carousel__navigation-button"
+        aria-label="${placeholders.previousSlide || 'Previous Slide'}"
+      ></button>
+      <button
+        type="button"
+        class="slide-next carousel__navigation-button"
+        aria-label="${placeholders.nextSlide || 'Next Slide'}"
+      ></button>
     `;
 
     container.append(slideNavButtons);
@@ -144,7 +153,12 @@ const decorateCarousel = async (block) => {
       const indicator = document.createElement('li');
       indicator.classList.add('carousel__indicator');
       indicator.dataset.targetSlide = idx;
-      indicator.innerHTML = `<button class="carousel__indicator-button" type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
+      indicator.innerHTML = html` <button
+        class="carousel__indicator-button"
+        type="button"
+        aria-label="${placeholders.showSlide || 'Show Slide'} ${idx +
+        1} ${placeholders.of || 'of'} ${rows.length}"
+      ></button>`;
       slideIndicators.append(indicator);
     }
     row.remove();
