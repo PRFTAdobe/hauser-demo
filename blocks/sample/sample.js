@@ -1,7 +1,18 @@
 import { extractElements, html } from '../../scripts/tools.js';
 
 const decorateSample = (block) => {
-  const blockElements = extractElements(block, [6]);
+  const blockElements = extractElements(block, [
+    'text',
+    'boolean',
+    'text',
+    'date',
+    'number',
+    'text',
+    'html',
+    'text',
+    'multiText',
+  ]);
+
   while (block.firstChild) {
     block.removeChild(block.firstChild);
   }
@@ -80,11 +91,13 @@ const decorateSample = (block) => {
     );
   }
 
-  if (multi) {
-    block.insertAdjacentHTML(
-      'beforeend',
-      html`<p><strong>Multifield: </strong>${multi}</p>`,
-    );
+  if (multi && Array.isArray(multi)) {
+    multi.forEach((multiItem) => {
+      block.insertAdjacentHTML(
+        'beforeend',
+        html`<p><strong>Multifield Item: </strong>${multiItem}</p>`,
+      );
+    });
   }
 };
 

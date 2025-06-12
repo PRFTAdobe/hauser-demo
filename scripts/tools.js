@@ -1,26 +1,27 @@
 /* eslint-disable no-restricted-globals */
-const extractElements = (block, richTextItems = []) => {
+const extractElements = (block, elementTypes = []) => {
   const blockElements = block.querySelectorAll(':scope > div > div');
   return Array.from(blockElements).map((blockElement, index) => {
-    const isRichText = richTextItems.includes(index);
+    const type = elementTypes[index]; // Get the type for the current element
     const text = blockElement.textContent.trim();
-    if (text === 'true' || text === 'false') {
-      return text === 'true';
-    }
-    if (text && !isNaN(text)) {
-      return Number(text);
-    }
 
-    if (isRichText) {
-      blockElement.classList.add('rich-text');
-      return blockElement;
+    switch (type) {
+      case 'boolean':
+        return text === 'true';
+      case 'date': {
+        const textAsDate = text.replace('T00:00:00.000Z', ' 12:00:00 UTC');
+        return !isNaN(Date.parse(textAsDate)) ? new Date(textAsDate) : null;
+      }
+      case 'html':
+        return blockElement;
+      case 'multiText':
+        return text.split(',');
+      case 'number':
+        return text && !isNaN(text) ? Number(text) : 0;
+      case 'text':
+      default:
+        return text;
     }
-
-    const textAsDate = text.replace('T00:00:00.000Z', ' 12:00:00 UTC');
-    if (!isNaN(Date.parse(textAsDate))) {
-      return new Date(textAsDate);
-    }
-    return text;
   });
 };
 

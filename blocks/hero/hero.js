@@ -1,7 +1,7 @@
 import { extractElements } from '../../scripts/tools.js';
 
 const decorateHero = (block) => {
-  const blockElements = extractElements(block, [0, 1]);
+  const blockElements = extractElements(block, ['html', 'html']);
   while (block.firstChild) {
     block.removeChild(block.firstChild);
   }

@@ -2,7 +2,7 @@
 const updateSectionFilter = require('../../updateSectionFilter.cjs');
 
 const xWalkTemplate = ({ kebabCase, uppercase }) => {
-  updateSectionFilter('./blocks/section/_section.json', kebabCase);
+  updateSectionFilter('./models/_section.json', kebabCase);
   return `{
   "definitions": [
     {

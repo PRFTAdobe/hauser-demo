@@ -2,14 +2,13 @@ import { getMetadata } from '../../scripts/aem.js';
 import { html } from '../../scripts/tools.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-// media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
-
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 const decorateHeader = async (block) => {
+  // media query match that indicates mobile/tablet width
+  const isDesktop = window.matchMedia('(min-width: 900px)');
   while (block.firstChild) {
     block.removeChild(block.firstChild);
   }
@@ -41,6 +40,8 @@ const decorateHeader = async (block) => {
     }
   });
 
+  const mobileMenu = createMobileMenu();
+
   const navSectionBrand = nav.querySelector('.nav__section--brand');
   if (navSectionBrand && navSectionBrand.firstElementChild) {
     navSectionBrand.firstElementChild.replaceWith(
@@ -51,7 +52,16 @@ const decorateHeader = async (block) => {
   const navSectionLinks = nav.querySelector('.nav__section--links');
   if (navSectionLinks && navSectionLinks.firstElementChild) {
     navSectionLinks.firstElementChild.replaceWith(
-      updateLinksSection(navSectionLinks.firstElementChild),
+      updateLinksSection(navSectionLinks.firstElementChild, isDesktop),
+    );
+
+    mobileMenu.addEventListener('click', () =>
+      toggleMenu(nav, navSectionLinks, isDesktop),
+    );
+
+    toggleMenu(nav, navSectionLinks, isDesktop, isDesktop.matches);
+    isDesktop.addEventListener('change', () =>
+      toggleMenu(nav, navSectionLinks, isDesktop, isDesktop.matches),
     );
   }
 
@@ -62,15 +72,8 @@ const decorateHeader = async (block) => {
     );
   }
 
-  const mobileMenu = createMobileMenu();
-  mobileMenu.addEventListener('click', () => toggleMenu(nav, navSectionLinks));
   nav.prepend(mobileMenu);
   nav.setAttribute('aria-expanded', 'false');
-  // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSectionLinks, isDesktop.matches);
-  isDesktop.addEventListener('change', () =>
-    toggleMenu(nav, navSectionLinks, isDesktop.matches),
-  );
 
   const navWrapper = document.createElement('div');
   navWrapper.classList.add('nav-wrapper');
@@ -84,7 +87,7 @@ const decorateHeader = async (block) => {
  * @param block
  * @returns updated brand section
  */
-const updateBrandSection = (block) => {
+export const updateBrandSection = (block) => {
   const brandButton = block.querySelector('.button');
   if (brandButton) {
     brandButton.classList.remove('button');
@@ -97,9 +100,10 @@ const updateBrandSection = (block) => {
 /**
  * Updates the link section
  * @param block
+ * @param isDesktop
  * @returns updated link section
  */
-const updateLinksSection = (block) => {
+export const updateLinksSection = (block, isDesktop) => {
   if (block) {
     block.classList.add('nav__links');
     const listItems = block.querySelectorAll('li');
@@ -128,7 +132,7 @@ const updateLinksSection = (block) => {
  * @param block
  * @returns updated tools section
  */
-const updateToolsSection = (block) => {
+export const updateToolsSection = (block) => {
   const icon = block.querySelector('.icon');
   if (icon) {
     const navTools = document.createElement('div');
@@ -143,7 +147,7 @@ const updateToolsSection = (block) => {
  * Creates the Hamburger/Mobile menu
  * @returns {HTMLDivElement}
  */
-const createMobileMenu = () => {
+export const createMobileMenu = () => {
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav__hamburger');
   hamburger.innerHTML = html` <button
@@ -161,10 +165,11 @@ const createMobileMenu = () => {
  * Closes Nav on Escape Keyboard Event
  * @param event
  */
-const closeOnEscape = (event) => {
+export const closeOnEscape = (event) => {
+  const isDesktop = window.matchMedia('(min-width: 900px)');
   if (event.code === 'Escape') {
     const nav = document.getElementById('nav');
-    const navSections = nav.querySelector('.nav-sections');
+    const navSections = nav.querySelector('.nav__section--links');
     const navSectionExpanded = navSections.querySelector(
       '[aria-expanded="true"]',
     );
@@ -172,7 +177,7 @@ const closeOnEscape = (event) => {
       toggleAllNavSections(navSections);
       navSectionExpanded.focus();
     } else if (!isDesktop.matches) {
-      toggleMenu(nav, navSections);
+      toggleMenu(nav, navSections, isDesktop);
       nav.querySelector('button').focus();
     }
   }
@@ -182,17 +187,18 @@ const closeOnEscape = (event) => {
  * Closes Nav on FocusLost
  * @param event
  */
-const closeOnFocusLost = (event) => {
+export const closeOnFocusLost = (event) => {
+  const isDesktop = window.matchMedia('(min-width: 900px)');
   const nav = event.currentTarget;
   if (!nav.contains(event.relatedTarget)) {
-    const navSections = nav.querySelector('.nav-sections');
+    const navSections = nav.querySelector('.nav__section--links');
     const navSectionExpanded = navSections.querySelector(
       '[aria-expanded="true"]',
     );
     if (navSectionExpanded && isDesktop.matches) {
       toggleAllNavSections(navSections, false);
     } else if (!isDesktop.matches) {
-      toggleMenu(nav, navSections, false);
+      toggleMenu(nav, navSections, isDesktop, false);
     }
   }
 };
@@ -200,7 +206,7 @@ const closeOnFocusLost = (event) => {
 /**
  * Adds Open on Keydown event listener to the active element
  */
-const focusNavSection = () => {
+export const focusNavSection = () => {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 };
 
@@ -208,13 +214,16 @@ const focusNavSection = () => {
  * Opens Submenu on 'Enter' or 'Space' key
  * @param event
  */
-const openOnKeydown = (event) => {
+export const openOnKeydown = (event) => {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav__link--with-children';
   if (isNavDrop && (event.code === 'Enter' || event.code === 'Space')) {
     const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
 
-    toggleAllNavSections(focused.closest('.nav-sections'));
+    const navSectionLinks = focused.closest('.nav__section--links');
+    if (navSectionLinks) {
+      toggleAllNavSections(navSectionLinks);
+    }
     focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
   }
 };
@@ -224,8 +233,8 @@ const openOnKeydown = (event) => {
  * @param {Element} navElement The container element
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
-const toggleAllNavSections = (navElement, expanded = false) => {
-  navElement.querySelectorAll('.nav-link').forEach((link) => {
+export const toggleAllNavSections = (navElement, expanded = false) => {
+  navElement.querySelectorAll('.nav__link').forEach((link) => {
     link.setAttribute('aria-expanded', expanded.toString());
   });
 };
@@ -234,21 +243,29 @@ const toggleAllNavSections = (navElement, expanded = false) => {
  * Toggles the entire nav
  * @param {Element} nav The container element
  * @param {Element} navSectionLinks The nav sections within the container element
- * @param {*} forceExpanded Optional param to force nav expand behavior when not null
+ * @param isDesktop
+ * @param {*} forceExpanded Optional param to force nav to expand behavior when not null
  */
-const toggleMenu = (nav, navSectionLinks, forceExpanded = null) => {
+export const toggleMenu = (
+  nav,
+  navSectionLinks,
+  isDesktop,
+  forceExpanded = null,
+) => {
   const expanded =
     forceExpanded !== null
       ? !forceExpanded
       : nav.getAttribute('aria-expanded') === 'true';
-  const button = nav.querySelector('.nav__hamburger button');
   document.body.style.overflowY = expanded || isDesktop.matches ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSectionLinks, !(expanded || isDesktop.matches));
-  button.setAttribute(
-    'aria-label',
-    expanded ? 'Open navigation' : 'Close navigation',
-  );
+  const button = nav.querySelector('.nav__hamburger button');
+  if (button) {
+    button.setAttribute(
+      'aria-label',
+      expanded ? 'Open navigation' : 'Close navigation',
+    );
+  }
   // enable nav dropdown keyboard accessibility
   const navLinkWithChildren = navSectionLinks.querySelectorAll(
     '.nav__link--with-children',
@@ -256,7 +273,7 @@ const toggleMenu = (nav, navSectionLinks, forceExpanded = null) => {
   if (isDesktop.matches) {
     navLinkWithChildren.forEach((navLink) => {
       if (!navLink.hasAttribute('tabindex')) {
-        navLink.setAttribute('tabindex', 0);
+        navLink.setAttribute('tabindex', '0');
         navLink.addEventListener('focus', focusNavSection);
       }
     });

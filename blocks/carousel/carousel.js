@@ -1,6 +1,6 @@
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
 
-function bindEvents(block) {
+const bindEvents = (block) => {
   const slideIndicators = block.querySelector('.carousel__indicators');
   if (!slideIndicators) return;
 
@@ -29,12 +29,11 @@ function bindEvents(block) {
   block.querySelectorAll('.carousel__slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
-}
+};
 
-function createSlide(row, slideIndex, carouselId) {
+const createSlide = (row, slideIndex) => {
   const slide = document.createElement('li');
   slide.dataset.slideIndex = slideIndex;
-  slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel__slide');
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
@@ -50,9 +49,9 @@ function createSlide(row, slideIndex, carouselId) {
   }
 
   return slide;
-}
+};
 
-function showSlide(block, slideIndex = 0) {
+const showSlide = (block, slideIndex = 0) => {
   const slides = block.querySelectorAll('.carousel__slide');
   let realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
   if (slideIndex >= slides.length) realSlideIndex = 0;
@@ -66,9 +65,9 @@ function showSlide(block, slideIndex = 0) {
     left: activeSlide.offsetLeft,
     top: 0,
   });
-}
+};
 
-function updateActiveSlide(slide) {
+const updateActiveSlide = (slide) => {
   const block = slide.closest('.carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
   block.dataset.activeSlide = slideIndex;
@@ -94,12 +93,9 @@ function updateActiveSlide(slide) {
       indicator.querySelector('button').setAttribute('disabled', 'true');
     }
   });
-}
+};
 
-let carouselId = 0;
-export default async function decorate(block) {
-  carouselId += 1;
-  block.setAttribute('id', `carousel-${carouselId}`);
+const decorateCarousel = async (block) => {
   const rows = block.querySelectorAll(':scope > div');
   const isSingleSlide = rows.length < 2;
 
@@ -141,7 +137,7 @@ export default async function decorate(block) {
   }
 
   rows.forEach((row, idx) => {
-    const slide = createSlide(row, idx, carouselId);
+    const slide = createSlide(row, idx);
     slidesWrapper.append(slide);
 
     if (slideIndicators) {
@@ -160,4 +156,6 @@ export default async function decorate(block) {
   if (!isSingleSlide) {
     bindEvents(block);
   }
-}
+};
+
+export default decorateCarousel;

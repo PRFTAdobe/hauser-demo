@@ -7,7 +7,7 @@
 import { loadSections } from '../../scripts/aem.js';
 import { decorateMain } from '../../scripts/scripts.js';
 
-export default async function decorate(block) {
+const decorateFragment = async (block) => {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
@@ -19,7 +19,7 @@ export default async function decorate(block) {
       block.replaceChildren(...fragmentSection.childNodes);
     }
   }
-}
+};
 
 /**
  * Loads a fragment.
@@ -54,3 +54,5 @@ export async function loadFragment(path) {
   }
   return null;
 }
+
+export default decorateFragment;

@@ -11,7 +11,7 @@ describe('decorate${pascalCase}', () => {
     const block = document.querySelector('.${kebabCase}');
     decorate${pascalCase}(block);
     expect(block.outerHTML).toBe(
-      '<div class="${kebabCase} block" data-block-name="${kebabCase}"><h2 id="${kebabCase}">${uppercase}</h2><div class="rich-text"><p>Lorem ipsum dolor sit amet.</p></div></div>',
+      '<div class="${kebabCase} block" data-block-name="${kebabCase}"><h2 id="${kebabCase}">${uppercase}</h2><div><p>Lorem ipsum dolor sit amet.</p></div></div>',
     );
   });
   it('should show default text when heading and text are empty', () => {

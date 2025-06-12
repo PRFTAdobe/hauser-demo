@@ -1,4 +1,4 @@
-/* eslint-disable no-undef,import/no-extraneous-dependencies */
+/* eslint-disable no-undef,import/no-extraneous-dependencies,no-console */
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');

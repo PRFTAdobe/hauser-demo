@@ -1,4 +1,4 @@
-export default function decorate(block) {
+const decorateColumns = (block) => {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
@@ -15,4 +15,6 @@ export default function decorate(block) {
       }
     });
   });
-}
+};
+
+export default decorateColumns;
