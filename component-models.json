@@ -378,6 +378,29 @@
         }
       },
       {
+        "component": "select",
+        "name": "linkTarget",
+        "label": "Target",
+        "options": [
+          {
+            "name": "self",
+            "value": "_self"
+          },
+          {
+            "name": "blank",
+            "value": "_blank"
+          }
+        ],
+        "condition": {
+          "===": [
+            {
+              "var": "includeCallToAction"
+            },
+            false
+          ]
+        }
+      },
+      {
         "component": "aem-content",
         "name": "callToActionOneLink",
         "label": "Call to Action One Link",
