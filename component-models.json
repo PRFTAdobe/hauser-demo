@@ -235,6 +235,23 @@
     ]
   },
   {
+    "id": "onboarding-block",
+    "fields": [
+      {
+        "component": "text",
+        "name": "textOne",
+        "label": "Text One",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "textTwo",
+        "label": "Text Two",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "sample",
     "fields": [
       {
