@@ -291,7 +291,6 @@
         "label": "Call to Action",
         "name": "onboarding_container",
         "valueType": "string",
-        "multi": true,
         "collapsible": true,
         "fields": [
           {
