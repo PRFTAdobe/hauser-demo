@@ -77,33 +77,16 @@
           "collapsible": true,
           "fields": [
             {
-              "component": "aem-content",
-              "name": "onboarding_link",
-              "label": "Link"
+              "component": "text-input",
+              "label": "Simple Text 1",
+              "name": "text",
+              "valueType": "string"
             },
             {
-              "component": "text",
-              "name": "onboarding_linkText",
-              "label": "Text"
-            },
-            {
-              "component": "select",
-              "name": "onboarding_linkType",
-              "label": "Type",
-              "options": [
-                {
-                  "name": "default",
-                  "value": ""
-                },
-                {
-                  "name": "primary",
-                  "value": "primary"
-                },
-                {
-                  "name": "secondary",
-                  "value": "secondary"
-                }
-              ]
+              "component": "text-input",
+              "label": "Simple Text 2",
+              "name": "text2",
+              "valueType": "string"
             }
           ]
         }
