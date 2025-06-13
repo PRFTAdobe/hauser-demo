@@ -297,6 +297,11 @@
         "label": "Text"
       },
       {
+        "component": "text",
+        "name": "onboarding_linkTitle",
+        "label": "Text"
+      },
+      {
         "component": "select",
         "name": "onboarding_linkType",
         "label": "Type",
