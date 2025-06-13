@@ -239,15 +239,91 @@
     "fields": [
       {
         "component": "text",
-        "name": "textOne",
-        "label": "Text One",
+        "name": "onboarding_subtitle",
+        "label": "Subtitle",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "textTwo",
-        "label": "Text Two",
+        "name": "onboarding_title",
+        "label": "Title",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "onboarding_titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "onboarding_description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "container",
+        "label": "Call to Action",
+        "name": "onboarding_container",
+        "valueType": "string",
+        "multi": true,
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "onboarding_link",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "name": "onboarding_linkText",
+            "label": "Text"
+          },
+          {
+            "component": "select",
+            "name": "onboarding_linkType",
+            "label": "Type",
+            "options": [
+              {
+                "name": "default",
+                "value": ""
+              },
+              {
+                "name": "primary",
+                "value": "primary"
+              },
+              {
+                "name": "secondary",
+                "value": "secondary"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
