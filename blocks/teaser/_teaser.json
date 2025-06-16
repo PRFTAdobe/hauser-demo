@@ -139,6 +139,30 @@
           }
         },
         {
+          "component": "select",
+          "name": "callToActionOneTarget",
+          "label": "Call to Action One Target",
+          "options": [
+            {
+              "name": "_self",
+              "value": "_self"
+            },
+            {
+              "name": "_blank",
+              "value": "_blank"
+            }
+          ],
+          "value": "_self",
+          "condition": {
+            "===": [
+              {
+                "var": "includeCallToAction"
+              },
+              true
+            ]
+          }
+        },
+        {
           "component": "text",
           "name": "callToActionOneText",
           "label": "Call to Action One Text",
@@ -155,6 +179,30 @@
           "component": "aem-content",
           "name": "callToActionTwoLink",
           "label": "Call to Action Two Link",
+          "condition": {
+            "===": [
+              {
+                "var": "includeCallToAction"
+              },
+              true
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "callToActionTwoTarget",
+          "label": "Call to Action Two Target",
+          "options": [
+            {
+              "name": "_self",
+              "value": "_self"
+            },
+            {
+              "name": "_blank",
+              "value": "_blank"
+            }
+          ],
+          "value": "_self",
           "condition": {
             "===": [
               {
