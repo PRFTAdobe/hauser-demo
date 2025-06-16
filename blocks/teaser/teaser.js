@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 import { extractElements, html } from '../../scripts/tools.js';
 
 const decorateTeaser = (block) => {
@@ -36,6 +37,8 @@ const decorateTeaser = (block) => {
     callToActionTwoText,
   ] = blockElements;
 
+  console.log(image);
+
   const teaserContent = document.createElement('div');
   teaserContent.classList.add('teaser__content');
 
@@ -62,6 +65,10 @@ const decorateTeaser = (block) => {
   }
 
   block.append(teaserContent);
+
+  if (image) {
+    block.append(image);
+  }
 
   const teaserParagraphs = block.querySelectorAll('p');
   Array.from(teaserParagraphs).forEach((teaserParagraph) => {
