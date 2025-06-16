@@ -24,3 +24,24 @@
     padding: 1.875rem;
   }
 }
+
+.teaser__title {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media only screen and (min-width: 480px) {
+  .teaser__title {
+    font-size: 1.875rem;
+  }
+}
+
+.teaser__paragraph {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.teaser__description *:last-child {
+  margin-block-end: 0;
+}

@@ -43,6 +43,7 @@ const decorateTeaser = (block) => {
     const pretitleElement = document.createElement('p');
     pretitleElement.classList.add('teaser__pretitle');
     pretitleElement.textContent = pretitle;
+    teaserContent.append(pretitleElement);
   }
 
   if (title && title.firstElementChild) {
@@ -61,6 +62,11 @@ const decorateTeaser = (block) => {
   }
 
   block.append(teaserContent);
+
+  const teaserParagraphs = block.querySelectorAll('p');
+  Array.from(teaserParagraphs).forEach((teaserParagraph) => {
+    teaserParagraph.classList.add('teaser__paragraph');
+  });
 };
 
 export default decorateTeaser;
