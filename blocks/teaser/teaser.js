@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { extractElements, html } from '../../scripts/tools.js';
 
 const decorateTeaser = (block) => {
@@ -37,8 +35,6 @@ const decorateTeaser = (block) => {
     callToActionTwoText,
   ] = blockElements;
 
-  console.log(image);
-
   const teaserContent = document.createElement('div');
   teaserContent.classList.add('teaser__content');
 
@@ -64,9 +60,51 @@ const decorateTeaser = (block) => {
     teaserContent.append(description);
   }
 
-  block.append(teaserContent);
+  if (includeCallToAction) {
+    const teaserActionContainer = document.createElement('div');
+    teaserActionContainer.classList.add('teaser__action-container');
 
-  if (image) {
+    if (callToActionOneLink && callToActionOneText) {
+      const callToActionOneLinkElement = callToActionOneLink.querySelector('a');
+      if (callToActionOneLinkElement) {
+        callToActionOneLinkElement.target = callToActionOneTarget || '_self';
+        callToActionOneLinkElement.title = callToActionOneText;
+        callToActionOneLinkElement.classList.add('teaser__action-link');
+        callToActionOneLinkElement.textContent = callToActionOneText;
+        teaserActionContainer.append(callToActionOneLinkElement);
+      }
+    }
+
+    if (callToActionTwoLink && callToActionTwoText) {
+      const callToActionTwoLinkElement = callToActionTwoLink.querySelector('a');
+      if (callToActionTwoLinkElement) {
+        callToActionTwoLinkElement.target = callToActionTwoTarget || '_self';
+        callToActionTwoLinkElement.title = callToActionTwoText;
+        callToActionTwoLinkElement.classList.add('teaser__action-link');
+        callToActionTwoLinkElement.textContent = callToActionTwoText;
+        teaserActionContainer.append(callToActionTwoLinkElement);
+      }
+    }
+    teaserContent.append(teaserActionContainer);
+    block.append(teaserContent);
+  } else if (link && link.firstElementChild) {
+    const linkElement = link.querySelector('a');
+    linkElement.target = linkTarget || '_self';
+    while (linkElement.firstChild) {
+      linkElement.removeChild(linkElement.firstChild);
+    }
+    linkElement.classList.add('teaser__link');
+    linkElement.append(teaserContent);
+    block.append(linkElement);
+  }
+
+  if (image && image.firstElementChild) {
+    image.classList.add('teaser__media');
+    block.classList.add('teaser--with-media');
+    const teaserImages = image.querySelectorAll('img');
+    Array.from(teaserImages).forEach((teaserImage) => {
+      teaserImage.classList.add('teaser__image');
+    });
     block.append(image);
   }
 
