@@ -1,32 +1,26 @@
 /**
  * @jest-environment jsdom
  */
-import { describe, expect, jest, test } from '@jest/globals';
+import { describe, expect, test } from '@jest/globals';
 
+import { html } from '../../scripts/tools.js';
 // Import the functions we are testing
 import decorateTeaser from './teaser.js';
 
-// We only need to provide a dummy implementation for the `html` utility function,
-// as its source code is not provided. The `extractElements` function will be the real one.
-jest.mock('../../scripts/tools.js', () => {
-  return {
-    ...jest.requireActual('../../scripts/tools.js'), // Import and retain the original extractElements
-    html: (strings, ...values) => {
-      return strings.map((string, i) => `${string}${values[i] || ''}`).join('');
-    },
-  };
-});
-
 describe('decorateTeaser', () => {
   // This function sets up the DOM with the provided HTML structure
-  const setupDOM = (html) => {
-    document.body.innerHTML = html;
+  const setupDOM = (htmlElement) => {
+    document.body.innerHTML = htmlElement;
     return document.querySelector('.teaser');
   };
 
   // The realistic HTML for the teaser block
-  const initialBlockHTML = `
-    <div class="teaser block" data-block-name="teaser" data-block-status="loaded">
+  const initialBlockHTML = html`
+    <div
+      class="teaser block"
+      data-block-name="teaser"
+      data-block-status="loaded"
+    >
       <div>
         <div><p>Pretitle</p></div>
       </div>
@@ -41,8 +35,15 @@ describe('decorateTeaser', () => {
       <div>
         <div>
           <picture>
-            <source type="image/webp" srcset="./media_1.jpg?width=750&format=webply&optimize=medium">
-            <img loading="lazy" alt="Lava flowing into the ocean" src="./media_1.jpg?width=750&format=jpg&optimize=medium">
+            <source
+              type="image/webp"
+              srcset="./media_1.jpg?width=750&format=webply&optimize=medium"
+            />
+            <img
+              loading="lazy"
+              alt="Lava flowing into the ocean"
+              src="./media_1.jpg?width=750&format=jpg&optimize=medium"
+            />
           </picture>
         </div>
       </div>
@@ -50,13 +51,17 @@ describe('decorateTeaser', () => {
         <div><p>true</p></div>
       </div>
       <div>
-        <div><p><a href="https://example.com/main-link">Main Link</a></p></div>
+        <div>
+          <p><a href="https://example.com/main-link">Main Link</a></p>
+        </div>
       </div>
       <div>
         <div>_self</div>
       </div>
       <div>
-        <div><p><a href="https://example.com/cta-one">CTA One</a></p></div>
+        <div>
+          <p><a href="https://example.com/cta-one">CTA One</a></p>
+        </div>
       </div>
       <div>
         <div>_blank</div>
@@ -65,7 +70,9 @@ describe('decorateTeaser', () => {
         <div><p>First Action</p></div>
       </div>
       <div>
-        <div><p><a href="https://example.com/cta-two">CTA Two</a></p></div>
+        <div>
+          <p><a href="https://example.com/cta-two">CTA Two</a></p>
+        </div>
       </div>
       <div>
         <div></div>
