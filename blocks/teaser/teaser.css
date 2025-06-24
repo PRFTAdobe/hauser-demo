@@ -1,0 +1,111 @@
+.teaser {
+  background-color: #f5f5f5;
+  color: #505050;
+  display: block;
+  inline-size: 100%;
+  margin-block: 1em;
+}
+
+.teaser--with-media {
+  background-color: inherit;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.teaser__content {
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8125rem;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-content: flex-end;
+  min-block-size: 10rem;
+  min-inline-size: 15rem;
+  padding: 0.75rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .teaser__content {
+    font-size: 0.875rem;
+    padding: 1.875rem;
+  }
+}
+
+.teaser__title {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media only screen and (min-width: 480px) {
+  .teaser__title {
+    font-size: 1.875rem;
+  }
+}
+
+.teaser__paragraph {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.teaser__description *:last-child {
+  margin-block-end: 0;
+}
+
+.teaser--with-media .teaser__pretitle,
+.teaser--with-media .teaser__title,
+.teaser--with-media .teaser__description {
+  background-color: rgb(0 0 0 / 50%);
+  color: #f5f5f5;
+  font-weight: bolder;
+  inline-size: fit-content;
+  margin-block-end: 3px;
+  padding: 0.5rem;
+}
+
+.teaser__media {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: -1;
+}
+
+.teaser__link {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.teaser__link:any-link:hover {
+  border-color: #e1e1e1;
+  color: #e1e1e1;
+  text-decoration: none;
+}
+
+.teaser__image {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.teaser__action-container {
+  display: flex;
+  gap: 10px;
+}
+
+.teaser--with-media .teaser__action-link {
+  background-color: rgb(0 0 0 / 50%);
+  border: 0.125rem solid #fff;
+  border-radius: 0.1875rem;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-block-start: 1rem;
+  padding: 0.5rem 1.125rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.teaser--with-media .teaser__action-link:any-link:hover {
+  border-color: #e1e1e1;
+  color: #e1e1e1;
+  text-decoration: none;
+}
