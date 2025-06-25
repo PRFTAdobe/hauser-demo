@@ -239,9 +239,9 @@
         ]
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "label": "Rich Text",
+        "component": "text",
+        "name": "endpoint",
+        "label": "Endpoint",
         "valueType": "string"
       }
     ]
