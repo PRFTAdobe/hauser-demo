@@ -1,3 +1,42 @@
-.custom {
-  display: inherit;
+.custom__faq {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.custom__faq__item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  padding: 1.5rem;
+}
+
+.custom__faq__question {
+  color: #222;
+  font-size: 1.1rem;
+  margin-block-end: 0.5rem;
+}
+
+.custom__faq__answer {
+  color: #555;
+  margin: 0;
+}
+
+.custom__faq__message {
+  font-style: italic;
+  padding: 1rem;
+}
+
+.custom__faq__message--empty {
+  color: #999;
+}
+
+.custom__faq__message--error {
+  color: #c00;
+}
+
+@media (max-width: 768px) {
+  .custom__faq {
+    grid-template-columns: 1fr;
+  }
 }

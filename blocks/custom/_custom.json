@@ -62,12 +62,6 @@
           "name": "endpoint",
           "label": "Endpoint",
           "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "endpointUrl",
-          "label": "Endpoint URL",
-          "valueType": "string"
         }
       ]
     }
