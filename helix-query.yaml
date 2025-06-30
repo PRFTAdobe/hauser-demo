@@ -8,6 +8,12 @@ indices:
       - '/**.json'
     target: /query-index.json
     properties:
+      title:
+        select: hlx:metadata.title
+      description:
+        select: hlx:metadata.description
+      tags:
+        select: hlx:metadata.tags
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
