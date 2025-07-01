@@ -6,7 +6,7 @@ indices:
       - '/**'
     exclude:
       - '/**.json'
-    target: /query-index.json
+    target: /query-index-v2.json
     properties:
       title:
         select: hlx:metadata.title
