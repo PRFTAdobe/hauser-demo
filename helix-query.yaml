@@ -6,11 +6,11 @@ indices:
       - '/**'
     exclude:
       - '/**.json'
-    target: /query-index-v2.json
+    target: /query-index.json
     properties:
       title:
-        select: hlx:metadata.title
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
       description:
-        select: hlx:metadata.description
-      tags:
-        select: hlx:metadata.tags
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
