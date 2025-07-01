@@ -14,9 +14,3 @@ indices:
         select: hlx:metadata.description
       tags:
         select: hlx:metadata.tags
-      lastModified:
-        select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-      robots:
-        select: head > meta[name="robots"]
-        value: attribute(el, "content")
