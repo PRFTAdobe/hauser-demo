@@ -1,0 +1,26 @@
+{
+  "title": "Page Metadata Model",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Page Title"
+    },
+    "description": {
+      "type": "string",
+      "title": "Page Description"
+    },
+    "pageType": {
+      "type": "string",
+      "title": "Page Type",
+      "enum": [
+        "Article",
+        "Product Page",
+        "Landing Page",
+        "Help Center",
+        "Blog Post"
+      ]
+    }
+  },
+  "required": ["title", "pageType"]
+}
