@@ -41,6 +41,25 @@
               "value": "about"
             }
           ]
+        },
+        {
+          "component": "select",
+          "name": "typePage2",
+          "label": "Page Type 2",
+          "options": [
+            {
+              "name": "Article",
+              "value": "article"
+            },
+            {
+              "name": "Landing",
+              "value": "landing"
+            },
+            {
+              "name": "About",
+              "value": "about"
+            }
+          ]
         }
       ]
     }
