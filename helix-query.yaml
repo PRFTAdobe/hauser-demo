@@ -9,14 +9,11 @@ indices:
     target: /query-index.json
     properties:
       title:
-        select: hlx:metadata.title
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
       description:
-        select: hlx:metadata.description
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
       tags:
-        select: hlx:metadata.tags
-      lastModified:
-        select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-      robots:
-        select: head > meta[name="robots"]
+        select: head > meta[name="cq-tags"]
         value: attribute(el, "content")
