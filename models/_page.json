@@ -23,10 +23,24 @@
           "label": "Keywords"
         },
         {
-          "component": "text",
+          "component": "select",
           "valueType": "string",
           "name": "typePage",
-          "label": "Page Type"
+          "label": "Page Type",
+          "options": [
+            {
+              "name": "Article",
+              "value": "article"
+            },
+            {
+              "name": "Landing",
+              "value": "landing"
+            },
+            {
+              "name": "About",
+              "value": "about"
+            }
+          ]
         }
       ]
     }
