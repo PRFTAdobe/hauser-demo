@@ -2,7 +2,7 @@
   "mappings": [
     "/content/hauser-demo/:/",
     "/content/hauser-demo/configuration:/.helix/config.json",
-    "/content/hauser-demo/metadata:/metadata.json"
+    "/content/hauser-demo/metadata.json:/metadata.json"
   ],
   "includes": [
     "/content/hauser-demo/"
