@@ -241,10 +241,10 @@
     "id": "custom",
     "fields": [
       {
-        "component": "date-input",
-        "name": "lastDate",
-        "label": "Date",
-        "valueType": "string"
+        "component": "date-time",
+        "label": "Date & Time",
+        "name": "date",
+        "valueType": "date"
       },
       {
         "component": "text",
