@@ -22,9 +22,10 @@
       "fields": [
         {
           "component": "date-time",
-          "label": "Date & Time",
+          "label": "Date & Time (mm/dd/yyyy)",
           "name": "date",
-          "valueType": "date"
+          "valueType": "date",
+          "valueFormat": "MM-DD-YYYY"
         },
         {
           "component": "text",
