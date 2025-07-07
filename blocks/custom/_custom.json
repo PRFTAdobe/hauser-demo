@@ -21,6 +21,12 @@
       "id": "custom",
       "fields": [
         {
+          "component": "date-input",
+          "name": "lastDate",
+          "label": "Date",
+          "valueType": "string"
+        },
+        {
           "component": "text",
           "name": "heading",
           "label": "Heading",

@@ -22,10 +22,43 @@
         "label": "Keywords"
       },
       {
-        "component": "text",
+        "component": "select",
         "valueType": "string",
         "name": "typePage",
-        "label": "Page Type"
+        "label": "Page Type Update",
+        "options": [
+          {
+            "name": "Article",
+            "value": "article"
+          },
+          {
+            "name": "Landing",
+            "value": "landing"
+          },
+          {
+            "name": "About",
+            "value": "about"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "dummyProp",
+        "label": "Page Type 2",
+        "options": [
+          {
+            "name": "Article",
+            "value": "article"
+          },
+          {
+            "name": "Landing",
+            "value": "landing"
+          },
+          {
+            "name": "About",
+            "value": "about"
+          }
+        ]
       }
     ]
   },
@@ -207,6 +240,12 @@
   {
     "id": "custom",
     "fields": [
+      {
+        "component": "date-input",
+        "name": "lastDate",
+        "label": "Date",
+        "valueType": "string"
+      },
       {
         "component": "text",
         "name": "heading",
