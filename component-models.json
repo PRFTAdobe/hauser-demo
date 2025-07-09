@@ -20,6 +20,17 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "customText",
+        "label": "Custom Text Field",
+        "maxLength": 10,
+        "validation": {
+          "pattern": "^.{0,10}$",
+          "message": "Title must not exceed 10 characters."
+        }
       }
     ]
   },
