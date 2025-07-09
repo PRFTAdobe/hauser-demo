@@ -26,10 +26,11 @@
         "valueType": "string",
         "name": "customText",
         "label": "Custom Text Field",
-        "maxLength": 10,
         "validation": {
-          "pattern": "^.{0,10}$",
-          "message": "Title must not exceed 10 characters."
+          "minLength": 5,
+          "maxLength": 10,
+          "regExp": "^foo:.*",
+          "customErrorMsg": "Why don't you make like a tree and get outta here?"
         }
       }
     ]
