@@ -26,6 +26,8 @@
         "valueType": "string",
         "name": "customText",
         "label": "Custom Text Field",
+        "valueFormat": "regexp",
+        "required": true,
         "validation": {
           "minLength": 5,
           "maxLength": 10,
