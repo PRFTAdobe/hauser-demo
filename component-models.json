@@ -194,6 +194,32 @@
     ]
   },
   {
+    "id": "colcomp",
+    "fields": [
+      {
+        "component": "text",
+        "name": "rows",
+        "label": "Rows",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "colWidth",
+        "label": "Heading Type",
+        "options": [
+          {
+            "name": "Single",
+            "value": "single"
+          },
+          {
+            "name": "Full",
+            "value": "full"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
