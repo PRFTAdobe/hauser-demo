@@ -237,13 +237,26 @@
         "label": "Rows"
       },
       {
-        "component": "text",
+        "component": "select",
+        "name": "customClass",
+        "label": "Style Class",
         "valueType": "string",
-        "name": "customNote",
-        "value": "",
-        "label": "Note",
+        "options": [
+          {
+            "name": "Dark Background",
+            "value": "dark-bg"
+          },
+          {
+            "name": "Light Background",
+            "value": "light-bg"
+          },
+          {
+            "name": "With Border",
+            "value": "with-border"
+          }
+        ],
         "xwalk": {
-          "property": "data-note"
+          "property": "data-custom-class"
         }
       }
     ]
