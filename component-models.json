@@ -225,13 +225,6 @@
       {
         "component": "text",
         "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
         "name": "rows",
         "value": "",
         "label": "Rows"
@@ -253,6 +246,84 @@
           {
             "name": "With Border",
             "value": "with-border"
+          }
+        ],
+        "xwalk": {
+          "property": "data-custom-class"
+        }
+      }
+    ]
+  },
+  {
+    "id": "customColumn",
+    "fields": [
+      {
+        "component": "select",
+        "name": "numColumns",
+        "label": "Number of Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          }
+        ],
+        "xwalk": {
+          "property": "data-num-columns"
+        }
+      },
+      {
+        "component": "select",
+        "name": "layout",
+        "label": "Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Full Width",
+            "value": "full-width"
+          },
+          {
+            "name": "Column Width",
+            "value": "column-width"
+          }
+        ],
+        "xwalk": {
+          "property": "data-layout"
+        }
+      },
+      {
+        "component": "select",
+        "name": "customClass",
+        "label": "Style Class",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Dark Background",
+            "value": "dark-bg"
+          },
+          {
+            "name": "Light Background",
+            "value": "light-bg"
+          },
+          {
+            "name": "With Border",
+            "value": "with-border"
+          },
+          {
+            "name": "Rounded",
+            "value": "rounded"
           }
         ],
         "xwalk": {

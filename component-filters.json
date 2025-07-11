@@ -13,6 +13,7 @@
       "carousel",
       "colcomp",
       "columns",
+      "customcolumn",
       "fragment",
       "hero",
       "image",
@@ -47,6 +48,21 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "custom-columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "title",
+      "button"
     ]
   }
 ]
