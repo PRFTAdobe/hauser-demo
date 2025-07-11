@@ -33,6 +33,16 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "customNote",
+          "value": "",
+          "label": "Note",
+          "xwalk": {
+            "property": "data-note"
+          }
         }
       ]
     }
