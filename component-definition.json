@@ -178,7 +178,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/container/v1/container",
+                "resourceType": "core/franklin/components/columns/v1/columns",
                 "template": {
                   "name": "Custom Columns",
                   "model": "customColumn"
