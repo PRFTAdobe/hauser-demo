@@ -258,6 +258,7 @@
         "name": "classes",
         "label": "Width and Layout",
         "valueType": "string",
+        "multiple": true,
         "options": [
           {
             "name": "Full Width (Container)",
