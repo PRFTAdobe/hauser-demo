@@ -54,40 +54,28 @@
         {
           "component": "select",
           "name": "classes",
-          "label": "Style Class",
+          "label": "Width and Layout",
           "valueType": "string",
           "options": [
             {
-              "name": "Dark Background",
-              "value": "dark-bg"
+              "name": "Full Width (Container)",
+              "value": "full-width"
             },
             {
-              "name": "Light Background",
-              "value": "light-bg"
+              "name": "Single Column Width (Container)",
+              "value": "single-column"
             },
             {
-              "name": "With Border",
-              "value": "with-border"
-            }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "label": "Layout Class",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Half n half",
-              "value": "half-width"
+              "name": "50-50 (2 Columns)",
+              "value": "half-width-cols"
             },
             {
-              "name": "66-33",
-              "value": "66-33"
+              "name": "66-33 (2 Columns)",
+              "value": "66-33-width-cols"
             },
             {
-              "name": "33-33-33",
-              "value": "33-33-33"
+              "name": "33-66 (2 Columns)",
+              "value": "33-66-width-cols"
             }
           ]
         }
