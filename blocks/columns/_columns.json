@@ -52,11 +52,11 @@
           "label": "Rows"
         },
         {
-          "component": "select",
+          "component": "multiselect",
           "name": "classes",
           "label": "Width and Layout",
-          "valueType": "string",
-          "multiple": true,
+          "valueType": "array",
+          "value": [],
           "options": [
             {
               "name": "Full Width (Container)",
