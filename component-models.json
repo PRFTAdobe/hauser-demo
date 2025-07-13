@@ -255,7 +255,7 @@
       },
       {
         "component": "select",
-        "name": "customClass",
+        "name": "classes",
         "label": "Style Class",
         "valueType": "string",
         "options": [
@@ -271,10 +271,7 @@
             "name": "With Border",
             "value": "with-border"
           }
-        ],
-        "xwalk": {
-          "property": "data-custom-class"
-        }
+        ]
       }
     ]
   },
