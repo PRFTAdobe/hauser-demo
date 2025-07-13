@@ -272,6 +272,26 @@
             "value": "with-border"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Layout Class",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Half n half",
+            "value": "half-width"
+          },
+          {
+            "name": "66-33",
+            "value": "66-33"
+          },
+          {
+            "name": "33-33-33",
+            "value": "33-33-33"
+          }
+        ]
       }
     ]
   },
