@@ -284,7 +284,7 @@
       },
       {
         "component": "select",
-        "name": "class",
+        "name": "styleClass",
         "label": "Style (only for 2 columns)",
         "valueType": "string",
         "options": [
@@ -296,15 +296,7 @@
             "name": "66-33",
             "value": "66-33"
           }
-        ],
-        "condition": {
-          "===": [
-            {
-              "var": "columns"
-            },
-            2
-          ]
-        }
+        ]
       }
     ]
   },
