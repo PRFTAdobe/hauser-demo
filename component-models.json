@@ -487,7 +487,12 @@
         "component": "richtext",
         "name": "description",
         "label": "Description",
-        "valueType": "string"
+        "valueType": "string",
+        "allowedMarks": [
+          "bold",
+          "italic",
+          "underline"
+        ]
       },
       {
         "component": "reference",
