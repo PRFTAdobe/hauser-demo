@@ -20,6 +20,21 @@
       "id": "button",
       "fields": [
         {
+          "component": "select",
+          "name": "btnTheme",
+          "label": "Theme",
+          "options": [
+            {
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "name": "Light",
+              "value": "light"
+            }
+          ]
+        },
+        {
           "component": "aem-content",
           "name": "link",
           "label": "Link"
@@ -50,6 +65,10 @@
             {
               "name": "secondary",
               "value": "secondary"
+            },
+            {
+              "name": "tertiary",
+              "value": "tertiary"
             }
           ]
         }
