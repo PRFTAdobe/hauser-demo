@@ -194,32 +194,6 @@
     ]
   },
   {
-    "id": "colcomp",
-    "fields": [
-      {
-        "component": "text",
-        "name": "rows",
-        "label": "Rows",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "colWidth",
-        "label": "Heading Type",
-        "options": [
-          {
-            "name": "Single",
-            "value": "single"
-          },
-          {
-            "name": "Full",
-            "value": "full"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "columns",
     "fields": [
       {
@@ -304,84 +278,6 @@
             },
             "2"
           ]
-        }
-      }
-    ]
-  },
-  {
-    "id": "customColumn",
-    "fields": [
-      {
-        "component": "select",
-        "name": "numColumns",
-        "label": "Number of Columns",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "1",
-            "value": "1"
-          },
-          {
-            "name": "2",
-            "value": "2"
-          },
-          {
-            "name": "3",
-            "value": "3"
-          },
-          {
-            "name": "4",
-            "value": "4"
-          }
-        ],
-        "xwalk": {
-          "property": "data-num-columns"
-        }
-      },
-      {
-        "component": "select",
-        "name": "layout",
-        "label": "Layout",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Full Width",
-            "value": "full-width"
-          },
-          {
-            "name": "Column Width",
-            "value": "column-width"
-          }
-        ],
-        "xwalk": {
-          "property": "data-layout"
-        }
-      },
-      {
-        "component": "select",
-        "name": "customClass",
-        "label": "Style Class",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Dark Background",
-            "value": "dark-bg"
-          },
-          {
-            "name": "Light Background",
-            "value": "light-bg"
-          },
-          {
-            "name": "With Border",
-            "value": "with-border"
-          },
-          {
-            "name": "Rounded",
-            "value": "rounded"
-          }
-        ],
-        "xwalk": {
-          "property": "data-custom-class"
         }
       }
     ]

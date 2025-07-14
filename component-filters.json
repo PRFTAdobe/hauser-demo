@@ -11,16 +11,15 @@
       "button",
       "cards",
       "carousel",
-      "colcomp",
       "columns",
-      "customColumn",
       "fragment",
       "hero",
       "image",
       "sample",
       "teaser",
       "text",
-      "title"
+      "title",
+      "embed"
     ]
   },
   {
@@ -48,21 +47,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "custom-columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "title",
-      "button"
     ]
   }
 ]
