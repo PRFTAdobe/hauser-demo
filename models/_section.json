@@ -20,6 +20,16 @@
       "id": "section",
       "fields": [
         {
+          "component": "select",
+          "name": "classes",
+          "label": "Theme",
+          "valueType": "string",
+          "options": [
+            { "name": "Light", "value": "bg-light" },
+            { "name": "Dark", "value": "bg-dark" }
+          ]
+        },
+        {
           "component": "text",
           "name": "name",
           "label": "Section Name",
