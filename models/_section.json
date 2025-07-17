@@ -35,11 +35,6 @@
               "value": "highlight"
             }
           ]
-        },
-        {
-          "component": "text",
-          "name": "classes",
-          "label": "Classes"
         }
       ]
     }
