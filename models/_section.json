@@ -31,16 +31,12 @@
           "label": "Style",
           "options": [
             {
-              "name": "Highlight",
-              "value": "highlight"
-            },
-            {
               "name": "Light",
-              "value": "light-bg"
+              "value": "section-theme-light"
             },
             {
               "name": "Dark",
-              "value": "dark-bg"
+              "value": "section-theme-dark"
             }
           ]
         }
@@ -54,17 +50,14 @@
         "button",
         "cards",
         "carousel",
-        "colcomp",
         "columns",
-        "customcolumn",
         "fragment",
         "hero",
         "image",
         "sample",
         "teaser",
         "text",
-        "title",
-        "embed"
+        "title"
       ]
     }
   ]

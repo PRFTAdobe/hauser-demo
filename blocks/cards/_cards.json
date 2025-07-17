@@ -33,6 +33,17 @@
   ],
   "models": [
     {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "variation",
+          "label": "Variation"
+        }
+      ]
+    },
+    {
       "id": "card",
       "fields": [
         {
