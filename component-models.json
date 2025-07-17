@@ -138,6 +138,11 @@
             "value": "highlight"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "classes",
+        "label": "Classes"
       }
     ]
   },
@@ -195,13 +200,6 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "test",
-        "label": "Test",
-        "value": ""
       }
     ]
   },
