@@ -195,6 +195,13 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "test",
+        "label": "Test",
+        "value": ""
       }
     ]
   },
