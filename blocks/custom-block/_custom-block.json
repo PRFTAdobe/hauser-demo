@@ -21,7 +21,7 @@
       "id": "custom-block",
       "fields": [
         {
-          "component": "richtext",
+          "component": "text",
           "name": "text",
           "label": "Rich Text",
           "valueType": "string"
@@ -30,20 +30,19 @@
           "component": "container",
           "name": "multipleImages",
           "label": "Custom",
-          "collapsible": true,
           "valueType": "string",
           "multi": true,
           "fields": [
             {
               "component": "text",
-              "name": "cardTitle",
+              "name": "card_Title",
               "value": "",
               "label": "Card Title",
               "valueType": "string"
             },
             {
               "component": "text",
-              "name": "cardDesc",
+              "name": "card_Desc",
               "value": "",
               "label": "Card Desc",
               "valueType": "string"
