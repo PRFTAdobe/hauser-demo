@@ -368,6 +368,40 @@
     ]
   },
   {
+    "id": "custom-block",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Rich Text",
+        "valueType": "string"
+      },
+      {
+        "component": "container",
+        "name": "multipleImages",
+        "label": "Images",
+        "collapsible": true,
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "name": "image",
+            "value": "",
+            "label": "Sample Image",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "alt",
+            "value": "",
+            "label": "Alt Text",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
