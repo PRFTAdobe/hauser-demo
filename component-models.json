@@ -181,6 +181,12 @@
             "value": "section-theme-dark"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "label": "Enable Gradient",
+        "name": "enableGradient",
+        "valueType": "boolean"
       }
     ]
   },
