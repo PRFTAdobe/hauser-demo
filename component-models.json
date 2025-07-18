@@ -169,6 +169,21 @@
       },
       {
         "component": "select",
+        "name": "newDrop",
+        "label": "New Dropdown",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "opt1"
+          },
+          {
+            "name": "Option 2",
+            "value": "opt2"
+          }
+        ]
+      },
+      {
+        "component": "select",
         "name": "style",
         "label": "Style",
         "options": [
