@@ -162,6 +162,12 @@
         "description": "The label shown for this section in the Content Tree"
       },
       {
+        "component": "text",
+        "name": "sectionDescription",
+        "label": "Section Description",
+        "description": "The label shown for this section description"
+      },
+      {
         "component": "select",
         "name": "style",
         "label": "Style",
