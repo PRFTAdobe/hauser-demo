@@ -202,29 +202,6 @@
         "label": "Enable Gradient",
         "name": "enableGradient",
         "valueType": "boolean"
-      },
-      {
-        "component": "container",
-        "name": "test",
-        "label": "Multi Text",
-        "collapsible": true,
-        "multi": true,
-        "fields": [
-          {
-            "component": "reference",
-            "name": "image",
-            "value": "",
-            "label": "Sample Image",
-            "valueType": "string"
-          },
-          {
-            "component": "text",
-            "name": "alt",
-            "value": "",
-            "label": "Alt Text",
-            "valueType": "string"
-          }
-        ]
       }
     ]
   },
@@ -423,6 +400,29 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "container",
+        "name": "testMulti",
+        "label": "Multi Text",
+        "collapsible": true,
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "name": "image",
+            "value": "",
+            "label": "Sample Image",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "alt",
+            "value": "",
+            "label": "Alt Text",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   },
