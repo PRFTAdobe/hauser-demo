@@ -207,6 +207,7 @@
         "component": "container",
         "name": "test",
         "label": "Multi Text",
+        "collapsible": true,
         "multi": true,
         "fields": [
           {
