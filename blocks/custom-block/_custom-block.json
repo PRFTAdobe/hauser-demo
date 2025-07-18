@@ -29,8 +29,9 @@
         {
           "component": "container",
           "name": "multipleImages",
-          "label": "Images",
+          "label": "Custom",
           "collapsible": true,
+          "valueType": "string",
           "multi": true,
           "fields": [
             {
