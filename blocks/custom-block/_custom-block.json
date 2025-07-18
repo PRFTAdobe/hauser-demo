@@ -34,17 +34,17 @@
           "multi": true,
           "fields": [
             {
-              "component": "reference",
-              "name": "image",
+              "component": "text",
+              "name": "cardTitle",
               "value": "",
-              "label": "Sample Image",
+              "label": "Card Title",
               "valueType": "string"
             },
             {
               "component": "text",
-              "name": "alt",
+              "name": "cardDesc",
               "value": "",
-              "label": "Alt Text",
+              "label": "Card Desc",
               "valueType": "string"
             }
           ]
