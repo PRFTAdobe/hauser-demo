@@ -377,28 +377,24 @@
         "valueType": "string"
       },
       {
-        "component": "multifield",
+        "component": "container",
         "name": "test",
         "label": "Multi Text",
-        "field": {
-          "component": "group",
-          "name": "item",
-          "label": "Image Item",
-          "fields": [
-            {
-              "component": "reference",
-              "name": "image",
-              "label": "Sample Image",
-              "valueType": "string"
-            },
-            {
-              "component": "text",
-              "name": "imageAlt",
-              "label": "Alt Text",
-              "valueType": "string"
-            }
-          ]
-        }
+        "multi": true,
+        "fields": [
+          {
+            "component": "text",
+            "name": "title",
+            "label": "Sample Title",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "desc",
+            "label": "Sample Desc",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   },

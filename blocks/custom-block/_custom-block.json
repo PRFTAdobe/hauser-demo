@@ -28,24 +28,25 @@
         },
         {
           "component": "container",
-          "name": "multipleImages",
-          "label": "Custom",
+          "name": "test",
+          "label": "Multi Text",
           "multi": true,
           "fields": [
             {
               "component": "text",
-              "name": "card_Title",
-              "label": "Card Title",
+              "name": "title",
+              "label": "Sample Title",
               "valueType": "string"
             },
             {
               "component": "text",
-              "name": "card_Desc",
-              "label": "Card Desc",
+              "name": "desc",
+              "label": "Sample Desc",
               "valueType": "string"
             }
           ]
         }
+
       ]
     }
   ],
