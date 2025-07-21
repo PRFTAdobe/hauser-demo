@@ -27,28 +27,30 @@
           "valueType": "string"
         },
         {
-          "component": "container",
-          "name": "multipleImages",
-          "label": "Custom",
-          "valueType": "string",
-          "multi": true,
-          "fields": [
-            {
-              "component": "text",
-              "name": "card_Title",
-              "value": "",
-              "label": "Card Title",
-              "valueType": "string"
-            },
-            {
-              "component": "text",
-              "name": "card_Desc",
-              "value": "",
-              "label": "Card Desc",
-              "valueType": "string"
-            }
-          ]
+          "component": "multifield",
+          "name": "test",
+          "label": "Multi Text",
+          "field": {
+            "component": "group",
+            "name": "item",
+            "label": "Image Item",
+            "fields": [
+              {
+                "component": "reference",
+                "name": "image",
+                "label": "Sample Image",
+                "valueType": "string"
+              },
+              {
+                "component": "text",
+                "name": "imageAlt",
+                "label": "Alt Text",
+                "valueType": "string"
+              }
+            ]
+          }
         }
+
       ]
     }
   ],
