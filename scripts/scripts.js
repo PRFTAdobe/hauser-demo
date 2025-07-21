@@ -11,6 +11,7 @@ import {
   loadSections,
   waitForFirstImage,
 } from './aem.js';
+import { registerSvgIcons } from './tools.js';
 
 /**
  * Decorates the main element.
@@ -143,6 +144,7 @@ async function loadLazy(doc) {
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
+  registerSvgIcons();
   loadDelayed();
 }
 
