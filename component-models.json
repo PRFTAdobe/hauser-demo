@@ -384,13 +384,13 @@
         "fields": [
           {
             "component": "text",
-            "name": "title",
+            "name": "multi_title",
             "label": "Sample Title",
             "valueType": "string"
           },
           {
             "component": "text",
-            "name": "desc",
+            "name": "multi_desc",
             "label": "Sample Desc",
             "valueType": "string"
           }
