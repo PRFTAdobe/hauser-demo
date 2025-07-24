@@ -492,7 +492,7 @@
         "component": "date-time",
         "label": "Date & Time",
         "name": "date",
-        "valueType": "date"
+        "valueType": "date-time"
       },
       {
         "component": "number",
