@@ -27,7 +27,9 @@
     "id": "cards",
     "components": [
       "card"
-    ]
+    ],
+    "min": 2,
+    "max": 4
   },
   {
     "id": "carousel",
