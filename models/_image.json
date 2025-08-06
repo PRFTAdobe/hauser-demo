@@ -18,6 +18,33 @@
       "id": "image",
       "fields": [
         {
+          "component": "text",
+          "name": "title",
+          "label": "Title",
+          "multi": false
+        },
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "value": [],
+          "label": "Teaser options",
+          "valueType": "array",
+          "options": [
+            {
+              "name": "Side-by-side",
+              "value": "side-by-side"
+            },
+            {
+              "name": "Image on left",
+              "value": "left"
+            },
+            {
+              "name": "Image on right",
+              "value": "right"
+            }
+          ]
+        },
+        {
           "component": "reference",
           "name": "image",
           "label": "Image",
