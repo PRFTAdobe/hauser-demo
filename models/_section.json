@@ -43,6 +43,7 @@
     {
       "id": "section",
       "components": [
+        "banner",
         "button",
         "cards",
         "carousel",
