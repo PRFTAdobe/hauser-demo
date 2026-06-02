@@ -31,9 +31,20 @@ describe('decorateFooter', () => {
     getMetadata.mockReturnValue('/custom-footer');
 
     const fragment = document.createElement('main');
-    const footerContent = document.createElement('div');
+    const section0 = document.createElement('div');
+    section0.classList.add('section');
+    section0.textContent = 'Brand Section';
+    fragment.appendChild(section0);
+
+    const section1 = document.createElement('div');
+    section1.classList.add('section');
+    const defaultContentWrapper = document.createElement('div');
+    defaultContentWrapper.classList.add('default-content-wrapper');
+    const footerContent = document.createElement('p');
     footerContent.textContent = 'Footer Content';
-    fragment.appendChild(footerContent);
+    defaultContentWrapper.appendChild(footerContent);
+    section1.appendChild(defaultContentWrapper);
+    fragment.appendChild(section1);
 
     loadFragment.mockResolvedValue(fragment);
 
@@ -54,9 +65,19 @@ describe('decorateFooter', () => {
     getMetadata.mockReturnValue('');
 
     const fragment = document.createElement('main');
-    const fallbackContent = document.createElement('div');
+    const section0 = document.createElement('div');
+    section0.classList.add('section');
+    fragment.appendChild(section0);
+
+    const section1 = document.createElement('div');
+    section1.classList.add('section');
+    const defaultContentWrapper = document.createElement('div');
+    defaultContentWrapper.classList.add('default-content-wrapper');
+    const fallbackContent = document.createElement('p');
     fallbackContent.textContent = 'Default Footer';
-    fragment.appendChild(fallbackContent);
+    defaultContentWrapper.appendChild(fallbackContent);
+    section1.appendChild(defaultContentWrapper);
+    fragment.appendChild(section1);
 
     loadFragment.mockResolvedValue(fragment);
 
@@ -72,7 +93,17 @@ describe('decorateFooter', () => {
 
     getMetadata.mockReturnValue('');
     const fragment = document.createElement('main');
-    fragment.appendChild(document.createElement('div'));
+    const section0 = document.createElement('div');
+    section0.classList.add('section');
+    fragment.appendChild(section0);
+
+    const section1 = document.createElement('div');
+    section1.classList.add('section');
+    const defaultContentWrapper = document.createElement('div');
+    defaultContentWrapper.classList.add('default-content-wrapper');
+    section1.appendChild(defaultContentWrapper);
+    fragment.appendChild(section1);
+
     loadFragment.mockResolvedValue(fragment);
 
     await decorateFooter(block);

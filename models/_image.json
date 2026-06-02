@@ -18,22 +18,15 @@
       "id": "image",
       "fields": [
         {
-          "component": "custom-asset-namespace:custom-asset",
+          "component": "reference",
           "name": "image",
           "label": "Image",
-          "configUrl": "/tools/assets-selector/image.config.json",
-          "valueType": "string"
-        },
-        {
-          "component": "custom-asset-namespace:custom-asset-mimetype",
-          "name": "imageMimeType",
-          "valueType": "string"
+          "multi": false
         },
         {
           "component": "text",
           "name": "imageAlt",
-          "label": "Alt Text",
-          "valueType": "string"
+          "label": "Alt Text"
         }
       ]
     }

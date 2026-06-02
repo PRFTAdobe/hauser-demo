@@ -37,7 +37,7 @@ const createSlide = (row, slideIndex) => {
   slide.dataset.slideIndex = slideIndex;
   slide.classList.add('carousel__slide');
 
-  row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
+  [...row.children].forEach((column, colIdx) => {
     column.classList.add(
       `carousel__slide-${colIdx === 0 ? 'image' : 'content'}`,
     );
@@ -97,7 +97,7 @@ export const updateActiveSlide = (slide) => {
 };
 
 const decorateCarousel = async (block) => {
-  const rows = block.querySelectorAll(':scope > div');
+  const rows = [...block.children];
   const isSingleSlide = rows.length < 2;
 
   const placeholders = await fetchPlaceholders();
