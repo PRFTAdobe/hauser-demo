@@ -1,0 +1,31 @@
+{
+  "repoNames": [
+    "author-p7752-e729659.adobeaemcloud.com"
+  ],
+  "aemTierType": [
+    "author"
+  ],
+  "filterSchema": [
+    {
+      "header": "File Type",
+      "groupKey": "FileTypeGroup",
+      "fields": [
+        {
+          "element": "checkbox",
+          "name": "type",
+          "defaultValue": [
+            "image/*"
+          ],
+          "options": [
+            {
+              "label": "Image",
+              "value": "image/*",
+              "readOnly": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rootPath": "/content/dam"
+}

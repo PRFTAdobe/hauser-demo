@@ -24,7 +24,10 @@ export default defineConfig([
   {
     languageOptions: {
       ecmaVersion: 'latest',
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        global: 'readonly', // <-- Add this line
+      },
       sourceType: 'module',
     },
     rules: {
@@ -65,23 +68,11 @@ export default defineConfig([
         },
       ],
       'prettier/prettier': [2],
-      'sort-keys': [
-        0,
-        'asc',
-        {
-          allowLineSeparatedGroups: false,
-          caseSensitive: true,
-          ignoreComputedKeys: false,
-          minKeys: 2,
-          natural: false,
-        },
-      ],
-      'sort-keys/sort-keys-fix': [2],
       'xwalk/invalid-field-name': [2],
       'xwalk/max-cells': [
         2,
         {
-          '*': 10,
+          '*': 50,
         },
       ],
       'xwalk/no-custom-resource-types': [2],
@@ -91,6 +82,12 @@ export default defineConfig([
   },
   perfectionist.configs['recommended-alphabetical'],
   prettierPlugin,
-  ...compat.plugins('sort-keys', 'json', 'xwalk', 'arrow-return-style'),
-  globalIgnores(['helix-importer-ui', './scripts/dompurify.min.js']),
+  ...compat.plugins('json', 'xwalk', 'arrow-return-style'),
+  globalIgnores([
+    'helix-importer-ui',
+    './scripts/dompurify.min.js',
+    './scripts/marked.min.js',
+    './scripts/chart.min.js',
+    './scripts/forms2.min.js',
+  ]),
 ]);

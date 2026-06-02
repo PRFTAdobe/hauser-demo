@@ -17,7 +17,18 @@ const decorateFooter = async (block) => {
     block.removeChild(block.firstChild);
   }
   const footer = document.createElement('div');
+  const linkSection = fragment.querySelectorAll('.section')[1];
+  const defaultContentWrapper = linkSection.querySelector(
+    '.default-content-wrapper',
+  );
+  Array.from(defaultContentWrapper.children).forEach((child) => {
+    if (child.id) {
+      console.log(child);
+    }
+  });
+  console.log(linkSection);
   while (fragment.firstElementChild) {
+    console.log('fragment', fragment.firstElementChild);
     footer.append(fragment.firstElementChild);
   }
 
