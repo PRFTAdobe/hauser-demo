@@ -23,12 +23,12 @@ const decorateFooter = async (block) => {
   );
   Array.from(defaultContentWrapper.children).forEach((child) => {
     if (child.id) {
-      console.log(child);
+      console.info(child);
     }
   });
-  console.log(linkSection);
+  console.info(linkSection);
   while (fragment.firstElementChild) {
-    console.log('fragment', fragment.firstElementChild);
+    console.info('fragment', fragment.firstElementChild);
     footer.append(fragment.firstElementChild);
   }
 

@@ -166,7 +166,7 @@
         },
         {
           "component": "text",
-          "name": "callToActionOneText",
+          "name": "callToActionOneLinkText",
           "label": "Call to Action One Text",
           "condition": {
             "===": [
@@ -216,7 +216,7 @@
         },
         {
           "component": "text",
-          "name": "callToActionTwoText",
+          "name": "callToActionTwoLinkText",
           "label": "Call to Action Two Text",
           "condition": {
             "===": [

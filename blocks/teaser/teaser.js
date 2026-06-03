@@ -29,10 +29,10 @@ const decorateTeaser = (block) => {
     linkTarget,
     callToActionOneLink,
     callToActionOneTarget,
-    callToActionOneText,
+    callToActionOneLinkText,
     callToActionTwoLink,
     callToActionTwoTarget,
-    callToActionTwoText,
+    callToActionTwoLinkText,
   ] = blockElements;
 
   const teaserContent = document.createElement('div');
@@ -64,24 +64,24 @@ const decorateTeaser = (block) => {
     const teaserActionContainer = document.createElement('div');
     teaserActionContainer.classList.add('teaser__action-container');
 
-    if (callToActionOneLink && callToActionOneText) {
+    if (callToActionOneLink && callToActionOneLinkText) {
       const callToActionOneLinkElement = callToActionOneLink.querySelector('a');
       if (callToActionOneLinkElement) {
         callToActionOneLinkElement.target = callToActionOneTarget || '_self';
-        callToActionOneLinkElement.title = callToActionOneText;
+        callToActionOneLinkElement.title = callToActionOneLinkText;
         callToActionOneLinkElement.classList.add('teaser__action-link');
-        callToActionOneLinkElement.textContent = callToActionOneText;
+        callToActionOneLinkElement.textContent = callToActionOneLinkText;
         teaserActionContainer.append(callToActionOneLinkElement);
       }
     }
 
-    if (callToActionTwoLink && callToActionTwoText) {
+    if (callToActionTwoLink && callToActionTwoLinkText) {
       const callToActionTwoLinkElement = callToActionTwoLink.querySelector('a');
       if (callToActionTwoLinkElement) {
         callToActionTwoLinkElement.target = callToActionTwoTarget || '_self';
-        callToActionTwoLinkElement.title = callToActionTwoText;
+        callToActionTwoLinkElement.title = callToActionTwoLinkText;
         callToActionTwoLinkElement.classList.add('teaser__action-link');
-        callToActionTwoLinkElement.textContent = callToActionTwoText;
+        callToActionTwoLinkElement.textContent = callToActionTwoLinkText;
         teaserActionContainer.append(callToActionTwoLinkElement);
       }
     }
